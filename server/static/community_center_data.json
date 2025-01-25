@@ -1,0 +1,1412 @@
+[
+    {
+        "Name": "YMCA of the Foothills",
+        "Longitude": -118.2188064,
+        "Latitude": 34.2120141
+    },
+    {
+        "Name": "University YWCA",
+        "Longitude": -122.2566295,
+        "Latitude": 37.8689327
+    },
+    {
+        "Name": "Hoover Community Center",
+        "Longitude": -121.9241775,
+        "Latitude": 37.333421
+    },
+    {
+        "Name": "Houge Park Center",
+        "Longitude": -121.9420188,
+        "Latitude": 37.2569059
+    },
+    {
+        "Name": "Hermosa Beach Community Center",
+        "Longitude": -118.3941873,
+        "Latitude": 33.8644268
+    },
+    {
+        "Name": "Cesar E. Chavez Community Center",
+        "Longitude": -117.3561553,
+        "Latitude": 33.9750154
+    },
+    {
+        "Name": "Lee Recreation Center",
+        "Longitude": -122.3897509,
+        "Latitude": 37.7348888
+    },
+    {
+        "Name": "Gold Country Fairgrounds",
+        "Longitude": -121.07405,
+        "Latitude": 38.8903241
+    },
+    {
+        "Name": "Jackie Robinson Center",
+        "Longitude": -118.1501584,
+        "Latitude": 34.1636092
+    },
+    {
+        "Name": "Old Sierraville Elementary School",
+        "Longitude": -120.3691303,
+        "Latitude": 39.5844217
+    },
+    {
+        "Name": "KUBO Theatre and Community Center",
+        "Longitude": -118.188124,
+        "Latitude": 33.8330723
+    },
+    {
+        "Name": "Petaluma Islamic Center",
+        "Longitude": -122.6456901,
+        "Latitude": 38.2303251
+    },
+    {
+        "Name": "Filipino Community Council Recreation Center",
+        "Longitude": -119.250387,
+        "Latitude": 35.7749537
+    },
+    {
+        "Name": "Mira Mesa Park and Recreation Center",
+        "Longitude": -117.1414983,
+        "Latitude": 32.9131484
+    },
+    {
+        "Name": "South Bay Recreation Center",
+        "Longitude": -117.0941016,
+        "Latitude": 32.5750835
+    },
+    {
+        "Name": "Sunset Temple",
+        "Longitude": -117.1311294,
+        "Latitude": 32.7486892
+    },
+    {
+        "Name": "Boys and Girls Club of Santa Monica",
+        "Longitude": -118.4934135,
+        "Latitude": 34.0211209
+    },
+    {
+        "Name": "Dorothy F. Johnson Center",
+        "Longitude": -121.8207522,
+        "Latitude": 39.7252859
+    },
+    {
+        "Name": "Lompoc Civic Center",
+        "Longitude": -120.4523698,
+        "Latitude": 34.63761
+    },
+    {
+        "Name": "Claude Pepper Senior Citizen Center",
+        "Longitude": -118.376304,
+        "Latitude": 34.0451945
+    },
+    {
+        "Name": "Edwards Community Center",
+        "Longitude": -118.4928406,
+        "Latitude": 34.0146811
+    },
+    {
+        "Name": "Booker T Anderson Community Center",
+        "Longitude": -122.3266371,
+        "Latitude": 37.9184535
+    },
+    {
+        "Name": "Hyde Community Center",
+        "Longitude": -121.920791,
+        "Latitude": 37.5338251
+    },
+    {
+        "Name": "Chanate Hall",
+        "Longitude": -122.7055421,
+        "Latitude": 38.4693554
+    },
+    {
+        "Name": "Elsanto Nino Community Center",
+        "Longitude": -118.261463,
+        "Latitude": 34.0252909
+    },
+    {
+        "Name": "Chinese Community Center",
+        "Longitude": -122.1355046,
+        "Latitude": 37.4327809
+    },
+    {
+        "Name": "Dinuba Senior Citizens Center",
+        "Longitude": -119.39151,
+        "Latitude": 36.5491171
+    },
+    {
+        "Name": "Oak Park Community Center",
+        "Longitude": -121.464398,
+        "Latitude": 38.542684
+    },
+    {
+        "Name": "Valley Center Community Center",
+        "Longitude": -117.039107,
+        "Latitude": 33.221446
+    },
+    {
+        "Name": "Goebel Adult Community Center",
+        "Longitude": -118.8539535,
+        "Latitude": 34.2008365
+    },
+    {
+        "Name": "Roger Jones Community Center",
+        "Longitude": -119.171496,
+        "Latitude": 34.2327822
+    },
+    {
+        "Name": "Junipero Serra Hall",
+        "Longitude": -117.1951559,
+        "Latitude": 32.753204
+    },
+    {
+        "Name": "Point Loma Assembly",
+        "Longitude": -117.233715,
+        "Latitude": 32.720205
+    },
+    {
+        "Name": "Fruitridge Community Center",
+        "Longitude": -121.460351,
+        "Latitude": 38.5241813
+    },
+    {
+        "Name": "Silverado Community Center",
+        "Longitude": -117.64679,
+        "Latitude": 33.7462864
+    },
+    {
+        "Name": "Silverado Park Community Center",
+        "Longitude": -117.7164126,
+        "Latitude": 33.6953935
+    },
+    {
+        "Name": "Burgess Sports Center",
+        "Longitude": -122.1754146,
+        "Latitude": 37.4529787
+    },
+    {
+        "Name": "Muir Beach Community Center",
+        "Longitude": -122.5785619,
+        "Latitude": 37.8620014
+    },
+    {
+        "Name": "Pala Youth Center",
+        "Longitude": -117.0751918,
+        "Latitude": 33.365791
+    },
+    {
+        "Name": "Cambria Connection Community Resource Center",
+        "Longitude": -121.0984765,
+        "Latitude": 35.5657629
+    },
+    {
+        "Name": "Boys' & Girls' Club Swim Team",
+        "Longitude": -122.028437,
+        "Latitude": 36.9720207
+    },
+    {
+        "Name": "Clubhouse",
+        "Longitude": -117.7020138,
+        "Latitude": 34.0981537
+    },
+    {
+        "Name": "Kimochi",
+        "Longitude": -122.4300248,
+        "Latitude": 37.7859573
+    },
+    {
+        "Name": "Visitor Service Center",
+        "Longitude": -121.965347,
+        "Latitude": 37.548096
+    },
+    {
+        "Name": "Boys & Girls Clubs of Northwest San Diego Polster Branch",
+        "Longitude": -117.2316515,
+        "Latitude": 32.9466601
+    },
+    {
+        "Name": "D Street Neighborhood Center",
+        "Longitude": -124.0816952,
+        "Latitude": 40.8715256
+    },
+    {
+        "Name": "SLO Hothouse & Cal Poly CIE SBDC",
+        "Longitude": -120.6622553,
+        "Latitude": 35.2804011
+    },
+    {
+        "Name": "Pleasanton Senior Center",
+        "Longitude": -121.8810703,
+        "Latitude": 37.6526652
+    },
+    {
+        "Name": "La Selva Beach Clubhouse",
+        "Longitude": -121.8633857,
+        "Latitude": 36.9376847
+    },
+    {
+        "Name": "Silicon Velley Meditation Center",
+        "Longitude": -122.1189319,
+        "Latitude": 37.3796915
+    },
+    {
+        "Name": "Athidhi Banquet Hall",
+        "Longitude": -122.0159699,
+        "Latitude": 37.3662756
+    },
+    {
+        "Name": "The Diversity Center",
+        "Longitude": -122.0117175,
+        "Latitude": 36.979375
+    },
+    {
+        "Name": "El Cerrito Community Center",
+        "Longitude": -122.3029287,
+        "Latitude": 37.9142804
+    },
+    {
+        "Name": "Joslyn Recreation Center",
+        "Longitude": -121.0976796,
+        "Latitude": 35.5652216
+    },
+    {
+        "Name": "Boys & Girls Club of Alameda",
+        "Longitude": -122.2861153,
+        "Latitude": 37.7790856
+    },
+    {
+        "Name": "Maidu Activity Center",
+        "Longitude": -121.246504,
+        "Latitude": 38.7381572
+    },
+    {
+        "Name": "Auburn Moose Family Center",
+        "Longitude": -121.076906,
+        "Latitude": 38.8927907
+    },
+    {
+        "Name": "Fiddler's Crossing",
+        "Longitude": -118.4458329,
+        "Latitude": 35.1304038
+    },
+    {
+        "Name": "East Bay Community Law Center",
+        "Longitude": -122.2683904,
+        "Latitude": 37.8558152
+    },
+    {
+        "Name": "Fireside Room",
+        "Longitude": -122.0736226,
+        "Latitude": 37.870309
+    },
+    {
+        "Name": "Avila Beach Community Center",
+        "Longitude": -120.733172,
+        "Latitude": 35.1806002
+    },
+    {
+        "Name": "Epicentre Youth Center",
+        "Longitude": -117.1415103,
+        "Latitude": 32.9130665
+    },
+    {
+        "Name": "Cantu GLBTI Resource Center",
+        "Longitude": -122.053938,
+        "Latitude": 37.0005317
+    },
+    {
+        "Name": "Pyramid Alternatives",
+        "Longitude": -122.4919374,
+        "Latitude": 37.649881
+    },
+    {
+        "Name": "University Hills Community Center",
+        "Longitude": -117.836024,
+        "Latitude": 33.6359831
+    },
+    {
+        "Name": "Salvation Army",
+        "Longitude": -121.485475,
+        "Latitude": 38.5900675
+    },
+    {
+        "Name": "Pasadena Senior Center",
+        "Longitude": -118.1484195,
+        "Latitude": 34.1479246
+    },
+    {
+        "Name": "Homestead Valley Community Center",
+        "Longitude": -122.5445863,
+        "Latitude": 37.8969059
+    },
+    {
+        "Name": "Valley of the Moon Teen Center",
+        "Longitude": -122.4855864,
+        "Latitude": 38.319032
+    },
+    {
+        "Name": "30th Street Senior Center",
+        "Longitude": -122.4252109,
+        "Latitude": 37.7420768
+    },
+    {
+        "Name": "City Forest Lodge",
+        "Longitude": -122.4609259,
+        "Latitude": 37.7495038
+    },
+    {
+        "Name": "Bradley-Milken Youth and Family Center",
+        "Longitude": -118.2410584,
+        "Latitude": 33.945834
+    },
+    {
+        "Name": "Perry Walther Community Center",
+        "Longitude": -120.0385117,
+        "Latitude": 38.4654674
+    },
+    {
+        "Name": "Love Potion Collective",
+        "Longitude": -122.2894915,
+        "Latitude": 37.8149944
+    },
+    {
+        "Name": "Era M. Casey Center",
+        "Longitude": -122.2727253,
+        "Latitude": 37.8671142
+    },
+    {
+        "Name": "Little Italy Association",
+        "Longitude": -117.1693062,
+        "Latitude": 32.7277505
+    },
+    {
+        "Name": "Evelynn Bishop Hall",
+        "Longitude": -120.9326009,
+        "Latitude": 38.3444306
+    },
+    {
+        "Name": "VFW Hall",
+        "Longitude": -120.9304067,
+        "Latitude": 38.3516678
+    },
+    {
+        "Name": "Lions Center for the Blind",
+        "Longitude": -122.269325,
+        "Latitude": 37.8069282
+    },
+    {
+        "Name": "Oakland Asian Cultural Center",
+        "Longitude": -122.2708699,
+        "Latitude": 37.8006498
+    },
+    {
+        "Name": "Above the Bank",
+        "Longitude": -117.1491447,
+        "Latitude": 33.4934873
+    },
+    {
+        "Name": "Freedom Center",
+        "Longitude": -119.0817911,
+        "Latitude": 34.2072364
+    },
+    {
+        "Name": "Veteran's Center",
+        "Longitude": -118.5905676,
+        "Latitude": 34.2568817
+    },
+    {
+        "Name": "San Fernando Valley Arts& Cultural Center",
+        "Longitude": -118.5317452,
+        "Latitude": 34.1800093
+    },
+    {
+        "Name": "HexLab Makerspace",
+        "Longitude": -118.6013184,
+        "Latitude": 34.2410806
+    },
+    {
+        "Name": "Morro Bay Audubon Society",
+        "Longitude": -120.853009,
+        "Latitude": 35.3642968
+    },
+    {
+        "Name": "Huntington Beach Masonic Center",
+        "Longitude": -117.9980198,
+        "Latitude": 33.6641789
+    },
+    {
+        "Name": "Scotts Bar Community Hall",
+        "Longitude": -123.0059765,
+        "Latitude": 41.7443411
+    },
+    {
+        "Name": "North Mission Viejo Little League",
+        "Longitude": -117.641127,
+        "Latitude": 33.640491
+    },
+    {
+        "Name": "Batting Cages",
+        "Longitude": -117.6397172,
+        "Latitude": 33.6412231
+    },
+    {
+        "Name": "Sebastopol Veterans Memorial Auditorium",
+        "Longitude": -122.8252072,
+        "Latitude": 38.4001341
+    },
+    {
+        "Name": "Vet Service orgs",
+        "Longitude": -118.1182306,
+        "Latitude": 33.7771764
+    },
+    {
+        "Name": "Youth Aquatic Center",
+        "Longitude": -117.2165387,
+        "Latitude": 32.7777057
+    },
+    {
+        "Name": "Healdsburg Senior Center",
+        "Longitude": -122.868834,
+        "Latitude": 38.6108053
+    },
+    {
+        "Name": "Healdsburg Boys & Girls Club",
+        "Longitude": -122.8612782,
+        "Latitude": 38.6147941
+    },
+    {
+        "Name": "Community Center",
+        "Longitude": -124.1477121,
+        "Latitude": 41.9263502
+    },
+    {
+        "Name": "Natadores Swim Club",
+        "Longitude": -117.6524921,
+        "Latitude": 33.6157574
+    },
+    {
+        "Name": "New Leaf Community Classroom",
+        "Longitude": -122.4324479,
+        "Latitude": 37.4689657
+    },
+    {
+        "Name": "Vineyard Community Center",
+        "Longitude": -122.0332706,
+        "Latitude": 37.9777997
+    },
+    {
+        "Name": "Willow Pass Community Center",
+        "Longitude": -122.019859,
+        "Latitude": 37.9864661
+    },
+    {
+        "Name": "Bishops' Storehouse (LDS)",
+        "Longitude": -118.472075,
+        "Latitude": 34.3101128
+    },
+    {
+        "Name": "Duarte Community Center",
+        "Longitude": -117.971694,
+        "Latitude": 34.1390847
+    },
+    {
+        "Name": "Duarte Senior Center",
+        "Longitude": -117.9704853,
+        "Latitude": 34.1393968
+    },
+    {
+        "Name": "Arcadia Community Center",
+        "Longitude": -118.0435903,
+        "Latitude": 34.1316569
+    },
+    {
+        "Name": "Casa de Cultura",
+        "Longitude": -122.2923517,
+        "Latitude": 37.8702688
+    },
+    {
+        "Name": "East Bay Media Center",
+        "Longitude": -122.271175,
+        "Latitude": 37.8709335
+    },
+    {
+        "Name": "Carmichael Park community center",
+        "Longitude": -121.3302349,
+        "Latitude": 38.6294936
+    },
+    {
+        "Name": "Stribley Community Center",
+        "Longitude": -121.266247,
+        "Latitude": 37.9520165
+    },
+    {
+        "Name": "Los Gatos Saratoga Adult Recreation Center",
+        "Longitude": -121.9776472,
+        "Latitude": 37.2208532
+    },
+    {
+        "Name": "Los Gatos Masonic Temple",
+        "Longitude": -121.9779731,
+        "Latitude": 37.2213797
+    },
+    {
+        "Name": "Los Gatos Saratoga Youth Recreation Center",
+        "Longitude": -121.9783902,
+        "Latitude": 37.2214843
+    },
+    {
+        "Name": "Los Gatos Saratoga Recreation Department",
+        "Longitude": -121.9784975,
+        "Latitude": 37.2214491
+    },
+    {
+        "Name": "The Community Foundation",
+        "Longitude": -120.6676537,
+        "Latitude": 35.2788929
+    },
+    {
+        "Name": "Oasis Club",
+        "Longitude": -115.4614142,
+        "Latitude": 33.2572335
+    },
+    {
+        "Name": "The View Teen Center",
+        "Longitude": -122.0928589,
+        "Latitude": 37.3982565
+    },
+    {
+        "Name": "Hollydale",
+        "Longitude": -122.9174449,
+        "Latitude": 38.5079497
+    },
+    {
+        "Name": "Fullerton Community Center",
+        "Longitude": -117.930539,
+        "Latitude": 33.8699845
+    },
+    {
+        "Name": "Dublin Senior Center",
+        "Longitude": -121.9327444,
+        "Latitude": 37.7077795
+    },
+    {
+        "Name": "Pacific Ranch Clubhouse",
+        "Longitude": -117.9995405,
+        "Latitude": 33.6824045
+    },
+    {
+        "Name": "McKinley Hall",
+        "Longitude": -122.260027,
+        "Latitude": 37.8662837
+    },
+    {
+        "Name": "Sebastopol Grange",
+        "Longitude": -122.807287,
+        "Latitude": 38.4074223
+    },
+    {
+        "Name": "Emeryville Center of Community Life",
+        "Longitude": -122.2819165,
+        "Latitude": 37.8358139
+    },
+    {
+        "Name": "Senior Citizens United",
+        "Longitude": -120.667128,
+        "Latitude": 35.4887406
+    },
+    {
+        "Name": "Richard T Conzelmann Community Center",
+        "Longitude": -121.4122353,
+        "Latitude": 38.6052392
+    },
+    {
+        "Name": "La Jolla Community Center",
+        "Longitude": -117.2760681,
+        "Latitude": 32.8307834
+    },
+    {
+        "Name": "Oakridge Mobile Home Park",
+        "Longitude": -118.4673942,
+        "Latitude": 34.3259495
+    },
+    {
+        "Name": "El Dorado Hills Community Service District",
+        "Longitude": -121.0749463,
+        "Latitude": 38.6828239
+    },
+    {
+        "Name": "Freeman Community Center",
+        "Longitude": -118.1558616,
+        "Latitude": 33.781969
+    },
+    {
+        "Name": "College Center 600",
+        "Longitude": -115.5045344,
+        "Latitude": 32.8278878
+    },
+    {
+        "Name": "Eagles Club",
+        "Longitude": -122.272072,
+        "Latitude": 41.2088003
+    },
+    {
+        "Name": "Community Center of Mendocino",
+        "Longitude": -123.7963623,
+        "Latitude": 39.3078986
+    },
+    {
+        "Name": "Parkway Community Center",
+        "Longitude": -117.08174,
+        "Latitude": 32.6381416
+    },
+    {
+        "Name": "Sandpiper Community Center",
+        "Longitude": -122.2358523,
+        "Latitude": 37.5375647
+    },
+    {
+        "Name": "Loma Verde Recreation Center",
+        "Longitude": -117.0490758,
+        "Latitude": 32.6024399
+    },
+    {
+        "Name": "Newberry Community Center",
+        "Longitude": -116.6633527,
+        "Latitude": 34.8142419
+    },
+    {
+        "Name": "Japanese American Cultural And Community Center",
+        "Longitude": -118.24182,
+        "Latitude": 34.0477813
+    },
+    {
+        "Name": "Orchard Bruins Event Center",
+        "Longitude": -121.9012208,
+        "Latitude": 37.3895479
+    },
+    {
+        "Name": "Los Angeles LGBT Center",
+        "Longitude": -118.3327632,
+        "Latitude": 34.1005628
+    },
+    {
+        "Name": "Anderson Valley Teen Center",
+        "Longitude": -123.3707622,
+        "Latitude": 39.0107248
+    },
+    {
+        "Name": "Brentwood Veterans Memorial Building",
+        "Longitude": -121.6959657,
+        "Latitude": 37.9333263
+    },
+    {
+        "Name": "Ca Special Affairs Event Planning",
+        "Longitude": -118.146366,
+        "Latitude": 34.587911
+    },
+    {
+        "Name": "Party Palace",
+        "Longitude": -121.4603135,
+        "Latitude": 38.4267334
+    },
+    {
+        "Name": "San Jos\u00e9 Bike Clinic",
+        "Longitude": -121.888221,
+        "Latitude": 37.3391236
+    },
+    {
+        "Name": "The Hub",
+        "Longitude": -116.9680227,
+        "Latitude": 32.6238288
+    },
+    {
+        "Name": "Ocean Beach Recreation Center",
+        "Longitude": -117.2455585,
+        "Latitude": 32.7449562
+    },
+    {
+        "Name": "Addison Penzak Jeish Community Center",
+        "Longitude": -121.9614494,
+        "Latitude": 37.2532869
+    },
+    {
+        "Name": "Russian River-Coastal",
+        "Longitude": -123.1984829,
+        "Latitude": 38.5755361
+    },
+    {
+        "Name": "The Mix",
+        "Longitude": -122.4159638,
+        "Latitude": 37.7790025
+    },
+    {
+        "Name": "Rohnert Park Senior Center",
+        "Longitude": -122.7078587,
+        "Latitude": 38.3449653
+    },
+    {
+        "Name": "Jamestown Community Hall",
+        "Longitude": -120.4229402,
+        "Latitude": 37.9539274
+    },
+    {
+        "Name": "Pride Center",
+        "Longitude": -118.526963,
+        "Latitude": 34.2400815
+    },
+    {
+        "Name": "Veteran's Resource Center",
+        "Longitude": -118.5254887,
+        "Latitude": 34.239627
+    },
+    {
+        "Name": "Waterfront RecCenter",
+        "Longitude": -117.1284661,
+        "Latitude": 32.6845081
+    },
+    {
+        "Name": "Balfour Beatty",
+        "Longitude": -120.5359757,
+        "Latitude": 34.7530339
+    },
+    {
+        "Name": "Asian American Activities Center",
+        "Longitude": -122.1699817,
+        "Latitude": 37.4247727
+    },
+    {
+        "Name": "El Centro Chicano y Latino",
+        "Longitude": -122.1697001,
+        "Latitude": 37.4252967
+    },
+    {
+        "Name": "Shreemaya Krishnadham Cultural & Community Center",
+        "Longitude": -121.956204,
+        "Latitude": 37.424123
+    },
+    {
+        "Name": "senior center",
+        "Longitude": -117.9612422,
+        "Latitude": 34.0022235
+    },
+    {
+        "Name": "Software & Computer Engineering Society SJSU",
+        "Longitude": -121.8814506,
+        "Latitude": 37.3368682
+    },
+    {
+        "Name": "Computer Science Club SJSU",
+        "Longitude": -121.8818021,
+        "Latitude": 37.3336752
+    },
+    {
+        "Name": "Women\u2019s Community Center",
+        "Longitude": -122.1717069,
+        "Latitude": 37.4250457
+    },
+    {
+        "Name": "Lesbian, Gay, Bisexual, Transgender Community Resources Center",
+        "Longitude": -122.1716841,
+        "Latitude": 37.4251214
+    },
+    {
+        "Name": "QSpot",
+        "Longitude": -122.1716943,
+        "Latitude": 37.4250876
+    },
+    {
+        "Name": "United Hungarian House",
+        "Longitude": -118.3025911,
+        "Latitude": 34.0401909
+    },
+    {
+        "Name": "Kiwanis Youth Center",
+        "Longitude": -122.1292658,
+        "Latitude": 38.0102556
+    },
+    {
+        "Name": "Bascom Community Center",
+        "Longitude": -121.931156,
+        "Latitude": 37.3074363
+    },
+    {
+        "Name": "Seven Trees Community Center",
+        "Longitude": -121.833097,
+        "Latitude": 37.2850078
+    },
+    {
+        "Name": "Shasta Lake Visitors Center",
+        "Longitude": -122.3632546,
+        "Latitude": 40.6817636
+    },
+    {
+        "Name": "Community Room",
+        "Longitude": -122.3607575,
+        "Latitude": 40.6808061
+    },
+    {
+        "Name": "Quail Valley Volunteer Fire Hall",
+        "Longitude": -117.242304,
+        "Latitude": 33.70516
+    },
+    {
+        "Name": "Brentwood Community Center",
+        "Longitude": -121.6927574,
+        "Latitude": 37.9343411
+    },
+    {
+        "Name": "California Homemakers Association (CHA)",
+        "Longitude": -122.707519,
+        "Latitude": 38.4130802
+    },
+    {
+        "Name": "Welcome Center",
+        "Longitude": -120.4267722,
+        "Latitude": 37.362342
+    },
+    {
+        "Name": "Student First Center",
+        "Longitude": -120.4269563,
+        "Latitude": 37.362172
+    },
+    {
+        "Name": "North County LGBTQ Resource Center",
+        "Longitude": -117.3472935,
+        "Latitude": 33.2143596
+    },
+    {
+        "Name": "San Fernando Senior Center",
+        "Longitude": -118.434075,
+        "Latitude": 34.280839
+    },
+    {
+        "Name": "North San Juan Community Center",
+        "Longitude": -121.1076695,
+        "Latitude": 39.3686746
+    },
+    {
+        "Name": "Marinwood Community Center",
+        "Longitude": -122.5523632,
+        "Latitude": 38.0279059
+    },
+    {
+        "Name": "Sri Kamakshi Community Center",
+        "Longitude": -121.9675036,
+        "Latitude": 37.367374
+    },
+    {
+        "Name": "War Memorial Community Center",
+        "Longitude": -122.4625873,
+        "Latitude": 37.7019488
+    },
+    {
+        "Name": "Culver City Teen Center",
+        "Longitude": -118.4017271,
+        "Latitude": 34.0126376
+    },
+    {
+        "Name": "Culver City Scout House",
+        "Longitude": -118.4049671,
+        "Latitude": 34.0103376
+    },
+    {
+        "Name": "Azahar Commons",
+        "Longitude": -119.151794,
+        "Latitude": 34.293091
+    },
+    {
+        "Name": "IMAN Cultural Center",
+        "Longitude": -118.4095786,
+        "Latitude": 34.0282917
+    },
+    {
+        "Name": "The Youth House",
+        "Longitude": -118.146214,
+        "Latitude": 34.1183942
+    },
+    {
+        "Name": "Northstar community services district",
+        "Longitude": -120.1198068,
+        "Latitude": 39.282148
+    },
+    {
+        "Name": "Rialto Senior Center",
+        "Longitude": -117.3697818,
+        "Latitude": 34.0754482
+    },
+    {
+        "Name": "Pleasanton Meadows Cabana Club",
+        "Longitude": -121.871604,
+        "Latitude": 37.6958154
+    },
+    {
+        "Name": "Riddick Youth Center",
+        "Longitude": -118.4218654,
+        "Latitude": 34.0383311
+    },
+    {
+        "Name": "Eritrean Community Center;\u121b\u1215\u1260\u122d \u121d\u1275\u1215\u130d\u130b\u12dd \u12a4\u122d\u1275\u122b\u12cd\u12eb\u1295",
+        "Longitude": -121.9589277,
+        "Latitude": 37.3433318
+    },
+    {
+        "Name": "Gene Lucas Community Center",
+        "Longitude": -124.1340852,
+        "Latitude": 40.5937416
+    },
+    {
+        "Name": "Lucerne Alpine Senior Center",
+        "Longitude": -122.7927422,
+        "Latitude": 39.0911347
+    },
+    {
+        "Name": "Buena Park Senior Center",
+        "Longitude": -118.010338,
+        "Latitude": 33.8433003
+    },
+    {
+        "Name": "Albany Community Center",
+        "Longitude": -122.2929685,
+        "Latitude": 37.8880249
+    },
+    {
+        "Name": "Center for Creative Growth",
+        "Longitude": -122.2942742,
+        "Latitude": 37.8877996
+    },
+    {
+        "Name": "Weed Community Center",
+        "Longitude": -122.3837382,
+        "Latitude": 41.4370854
+    },
+    {
+        "Name": "Family and Community Resource Center of Weed",
+        "Longitude": -122.3846054,
+        "Latitude": 41.4244994
+    },
+    {
+        "Name": "Bodega Bay Community Center",
+        "Longitude": -123.0497611,
+        "Latitude": 38.3411398
+    },
+    {
+        "Name": "Lincoln Heights Youth Center Complex",
+        "Longitude": -118.2116168,
+        "Latitude": 34.0756927
+    },
+    {
+        "Name": "Campus Center",
+        "Longitude": -122.4404592,
+        "Latitude": 38.570358
+    },
+    {
+        "Name": "Manhattan Torah Center",
+        "Longitude": -118.3962309,
+        "Latitude": 33.8858416
+    },
+    {
+        "Name": "Gold River Community Association",
+        "Longitude": -121.2448136,
+        "Latitude": 38.6236583
+    },
+    {
+        "Name": "IEHP Community Resource Center - Victorville",
+        "Longitude": -117.340122,
+        "Latitude": 34.4747701
+    },
+    {
+        "Name": "Victoria Gardens Cultural Center",
+        "Longitude": -117.5327604,
+        "Latitude": 34.1129708
+    },
+    {
+        "Name": "Clifton C. Miller Community Center",
+        "Longitude": -117.8195563,
+        "Latitude": 33.7427968
+    },
+    {
+        "Name": "Civic Center",
+        "Longitude": -122.995899,
+        "Latitude": 38.4641543
+    },
+    {
+        "Name": "Benicia Senior Center",
+        "Longitude": -122.1538344,
+        "Latitude": 38.0532246
+    },
+    {
+        "Name": "Maitreya Buddhist Cultural Center",
+        "Longitude": -121.861905,
+        "Latitude": 37.3312682
+    },
+    {
+        "Name": "Shipshape Community Center",
+        "Longitude": -122.368721,
+        "Latitude": 37.8272419
+    },
+    {
+        "Name": "Kanbar Performing Arts Center",
+        "Longitude": -122.4216129,
+        "Latitude": 37.7744725
+    },
+    {
+        "Name": "The Commonwealth Club of California",
+        "Longitude": -122.392646,
+        "Latitude": 37.7932364
+    },
+    {
+        "Name": "Masonic Temple",
+        "Longitude": -118.4895632,
+        "Latitude": 34.0206378
+    },
+    {
+        "Name": "San Francisco Go Club Dojo",
+        "Longitude": -122.4287391,
+        "Latitude": 37.7851418
+    },
+    {
+        "Name": "Kol Torah Center",
+        "Longitude": -118.4349735,
+        "Latitude": 34.0483554
+    },
+    {
+        "Name": "Benicia Vetrans",
+        "Longitude": -122.1556682,
+        "Latitude": 38.0532663
+    },
+    {
+        "Name": "Chabad Persian Youth Center",
+        "Longitude": -118.388394,
+        "Latitude": 34.0551173
+    },
+    {
+        "Name": "The Spahr Center",
+        "Longitude": -122.51748,
+        "Latitude": 37.9384759
+    },
+    {
+        "Name": "Gunther-Hirsh Family Center",
+        "Longitude": -118.3611523,
+        "Latitude": 34.0769098
+    },
+    {
+        "Name": "Chinese Culture Center",
+        "Longitude": -122.404532,
+        "Latitude": 37.7951221
+    },
+    {
+        "Name": "San Francisco Aquatic Park Senior Center",
+        "Longitude": -122.4235004,
+        "Latitude": 37.8064235
+    },
+    {
+        "Name": "Tranquil Resonance Studio",
+        "Longitude": -122.4115478,
+        "Latitude": 37.7961565
+    },
+    {
+        "Name": "Seal Beach Senior Center",
+        "Longitude": -118.105004,
+        "Latitude": 33.7438138
+    },
+    {
+        "Name": "Mary Rodriguez Senior Citizen's Center",
+        "Longitude": -118.0820631,
+        "Latitude": 33.828677
+    },
+    {
+        "Name": "H. Louis Lake Senior Citizens Center",
+        "Longitude": -117.9353273,
+        "Latitude": 33.7772205
+    },
+    {
+        "Name": "Costello Senior Citizen Center",
+        "Longitude": -118.210677,
+        "Latitude": 34.0205441
+    },
+    {
+        "Name": "Glassell Park Senior Citizen Center",
+        "Longitude": -118.2323264,
+        "Latitude": 34.1176947
+    },
+    {
+        "Name": "Jim Gilliam Senior Citizen Center",
+        "Longitude": -118.3531529,
+        "Latitude": 34.012282
+    },
+    {
+        "Name": "Yurok Tribe Community Center",
+        "Longitude": -124.0374469,
+        "Latitude": 41.5293595
+    },
+    {
+        "Name": "La Tijera Community Center",
+        "Longitude": -118.3699662,
+        "Latitude": 33.979677
+    },
+    {
+        "Name": "Ramona Woman's Club",
+        "Longitude": -116.8609763,
+        "Latitude": 33.0457902
+    },
+    {
+        "Name": "Civic Center",
+        "Longitude": -116.2187464,
+        "Latitude": 33.7194938
+    },
+    {
+        "Name": "Girl Scouts Greater Los Angeles",
+        "Longitude": -118.3553979,
+        "Latitude": 33.968202
+    },
+    {
+        "Name": "Sherman Oaks - East Valley Adult Center",
+        "Longitude": -118.448372,
+        "Latitude": 34.1631497
+    },
+    {
+        "Name": "East Bay Community Space",
+        "Longitude": -122.2622994,
+        "Latitude": 37.840148
+    },
+    {
+        "Name": "Stockton",
+        "Longitude": -121.2910052,
+        "Latitude": 37.9537022
+    },
+    {
+        "Name": "Thelma Terry Building",
+        "Longitude": -118.4682777,
+        "Latitude": 34.021353
+    },
+    {
+        "Name": "SF Dharma Collective",
+        "Longitude": -122.4106471,
+        "Latitude": 37.7525976
+    },
+    {
+        "Name": "Don Tatzin Community Hall",
+        "Longitude": -122.1161605,
+        "Latitude": 37.8921681
+    },
+    {
+        "Name": "Museum of Children's Arts MOCHA",
+        "Longitude": -122.2724438,
+        "Latitude": 37.8037013
+    },
+    {
+        "Name": "CPP Pride Center",
+        "Longitude": -117.8202093,
+        "Latitude": 34.0571661
+    },
+    {
+        "Name": "Cedarpines Park Community center",
+        "Longitude": -117.32701,
+        "Latitude": 34.2490053
+    },
+    {
+        "Name": "La Care Community Resource Center",
+        "Longitude": -118.2130218,
+        "Latitude": 33.9297976
+    },
+    {
+        "Name": "Bluxome Center",
+        "Longitude": -122.3969367,
+        "Latitude": 37.7765841
+    },
+    {
+        "Name": "Monte Vista Villas",
+        "Longitude": -122.1636979,
+        "Latitude": 37.7787334
+    },
+    {
+        "Name": "Shadetree Community Clubhouse",
+        "Longitude": -117.5961551,
+        "Latitude": 33.9863844
+    },
+    {
+        "Name": "Family Health Center for Older Adults",
+        "Longitude": -117.0548669,
+        "Latitude": 32.7398281
+    },
+    {
+        "Name": "Police Activities League Youth Center",
+        "Longitude": -118.4806101,
+        "Latitude": 34.0199754
+    },
+    {
+        "Name": "South Oxnard Senior Center",
+        "Longitude": -119.1767102,
+        "Latitude": 34.1605445
+    },
+    {
+        "Name": "Palm Vista Senior Center",
+        "Longitude": -119.1817927,
+        "Latitude": 34.1930038
+    },
+    {
+        "Name": "Wilson Senior Center",
+        "Longitude": -119.180784,
+        "Latitude": 34.2056157
+    },
+    {
+        "Name": "Colonia Senior Center",
+        "Longitude": -119.1666408,
+        "Latitude": 34.2042362
+    },
+    {
+        "Name": "Sommer's Place at Sommers Bend",
+        "Longitude": -117.0903846,
+        "Latitude": 33.5456912
+    },
+    {
+        "Name": "Spirited Play Labs",
+        "Longitude": -121.9676323,
+        "Latitude": 37.7763541
+    },
+    {
+        "Name": "Virginia Avenue Park Teen Center",
+        "Longitude": -118.4683438,
+        "Latitude": 34.0202935
+    },
+    {
+        "Name": "Morris Scout House",
+        "Longitude": -118.3698089,
+        "Latitude": 33.8698025
+    },
+    {
+        "Name": "YWCA San Francisco & Marin",
+        "Longitude": -122.4090623,
+        "Latitude": 37.7935514
+    },
+    {
+        "Name": "\u09ac\u09be\u0982\u09b2\u09be\u200c\u09a6\u09c7\u09b6 \u0985\u09cd\u09af\u09be\u0995\u09be\u200c\u09a1\u09c7\u09ae\u09bf'\u09b0 - Bangladesh Academy",
+        "Longitude": -118.3056799,
+        "Latitude": 34.0691541
+    },
+    {
+        "Name": "Rainbow Resource Center",
+        "Longitude": -120.995632,
+        "Latitude": 37.6400317
+    },
+    {
+        "Name": "Cameron Park Community Centre",
+        "Longitude": -121.0039039,
+        "Latitude": 38.6607875
+    },
+    {
+        "Name": "Stanislaus County Community Services Facility",
+        "Longitude": -120.9913759,
+        "Latitude": 37.5883431
+    },
+    {
+        "Name": "Stanislaus County Department of Child Support Services",
+        "Longitude": -120.9911262,
+        "Latitude": 37.5882481
+    },
+    {
+        "Name": "Stanislaus County Welfare Office",
+        "Longitude": -120.9916979,
+        "Latitude": 37.5884244
+    },
+    {
+        "Name": "Stan Works",
+        "Longitude": -120.9914005,
+        "Latitude": 37.5880215
+    },
+    {
+        "Name": "Community Services Agency",
+        "Longitude": -120.9908292,
+        "Latitude": 37.5881554
+    },
+    {
+        "Name": "The Center Long Beach",
+        "Longitude": -118.1671308,
+        "Latitude": 33.7718565
+    },
+    {
+        "Name": "Ceres Community Center",
+        "Longitude": -120.9541734,
+        "Latitude": 37.5929053
+    },
+    {
+        "Name": "Simi Valley Masonic Lodge",
+        "Longitude": -118.768735,
+        "Latitude": 34.2706
+    },
+    {
+        "Name": "Camacho Recreation Center",
+        "Longitude": -117.0830723,
+        "Latitude": 32.6686027
+    },
+    {
+        "Name": "Girls Inc.",
+        "Longitude": -122.2552935,
+        "Latitude": 37.7709562
+    },
+    {
+        "Name": "Hurlbut Rook Community Center",
+        "Longitude": -116.2332703,
+        "Latitude": 35.8711128
+    },
+    {
+        "Name": "Pine Acres Community Services District",
+        "Longitude": -120.6422602,
+        "Latitude": 38.3957124
+    },
+    {
+        "Name": "Boys & Girls Club of Costa Mesa",
+        "Longitude": -117.9006526,
+        "Latitude": 33.6431248
+    },
+    {
+        "Name": "Raymond & Annie Kouyoumdjian Hall",
+        "Longitude": -118.2330524,
+        "Latitude": 34.1653622
+    },
+    {
+        "Name": "The Commons",
+        "Longitude": -122.4260697,
+        "Latitude": 37.7761417
+    },
+    {
+        "Name": "Norton Younglove Community Center",
+        "Longitude": -117.3207316,
+        "Latitude": 34.0160231
+    },
+    {
+        "Name": "San Manuel Community Center",
+        "Longitude": -117.2177499,
+        "Latitude": 34.1509806
+    },
+    {
+        "Name": "Groveland Community Resiliency Center",
+        "Longitude": -120.2224274,
+        "Latitude": 37.846116
+    },
+    {
+        "Name": "Hilltop",
+        "Longitude": -117.5995516,
+        "Latitude": 33.5393662
+    },
+    {
+        "Name": "W6YL - San Jose State Amateur Radio Club",
+        "Longitude": -121.8820446,
+        "Latitude": 37.3368961
+    },
+    {
+        "Name": "EA Family Services",
+        "Longitude": -120.9457851,
+        "Latitude": 39.9365284
+    },
+    {
+        "Name": "Border View YMCA",
+        "Longitude": -117.0572469,
+        "Latitude": 32.5782021
+    },
+    {
+        "Name": "Bahai Comunity Center Encino",
+        "Longitude": -118.5027319,
+        "Latitude": 34.1588338
+    }
+]

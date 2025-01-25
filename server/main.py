@@ -27,11 +27,6 @@ def OpenStreetViewAPI():
     node["amenity"="community_centre"](area.searchArea);
     out body;
     """
-    
-    # lat_min = center_lat - 0.1
-    # lat_max = center_lat + 0.1
-    # lon_min = center_lon - 0.1
-    # lon_max = center_lon + 0.1
 
     encoded_query = urllib.parse.urlencode({'data': query})
     
@@ -43,7 +38,6 @@ def OpenStreetViewAPI():
 
     return_data = "["
     for element in data['elements']:
-        print(element)
         name = element['tags'].get('name', 'Unknown')
         lat = element['lat']
         lon = element['lon']
@@ -53,5 +47,8 @@ def OpenStreetViewAPI():
     return_data += "]"
 
     community_centers = json.loads(return_data);
+        
+    with open("static\community_center_data.json", "w") as file:
+        json.dump(community_centers, file, indent=4)
 
     return community_centers, 400

@@ -21,31 +21,24 @@ def get_nearest_10_h(lat, lon, danger_rad, listy, lat_field, lon_field):
             insort(near_10, hospital, key=lambda x: x['Distance'])
     return near_10
 
-def get_nearest_10_cc(lat, lon, danger):
+
+def get_nearest_10_cc(lat,lon, danger):
     near_10_cc = []
     api = overpy.Overpass()
     
     query = f"""
     (
         area["name"="California"]->.searchArea;
-        node["amenity"="community_centre"](around:{5000},{lat},{lon});
+        node["amenity"="community_centre"](around:{10000},{lat},{lon});
     );
     out body;
     """
-    result = api.query(query)
-    print(result)
-    encoded_query = urllib.parse.urlencode({'data': query})
-    
-    url = "http://overpass-api.de/api/interpreter"
-    final_url = f"{url}?{encoded_query}"    
+    data = api.query(query)    
 
-    with urllib.request.urlopen(final_url) as response:
-        data = json.loads(response.read().decode())
-
-    for element in data['elements']:
-        name = element['tags'].get('name', 'Unknown')
-        cc_lat = element['lat']
-        cc_lon = element['lon']
+    for element in data.nodes:
+        name = element.tags.get("name", "Unknown")
+        cc_lat = element.lat
+        cc_lon = element.lon
         dist = geodesic((lat, lon), (cc_lat, cc_lon)).miles
 
         safe = True
@@ -55,15 +48,13 @@ def get_nearest_10_cc(lat, lon, danger):
             safe = False
 
         if (name != "Unknown"):
-            cc_data = f'{{"Name": "{name}", "Distance": {dist}, "Longitude": {lon}, "Latitude": {lat}, "Safe": {safe}}}'
-        
+            cc_data = {"Name": name, "Distance": dist, "Longitude": lon, "Latitude": lat, "Safe": safe}
+
         if len(near_10_cc) < 10: 
             insort(near_10_cc, cc_data, key=lambda x: x['Distance'])
-        elif dist < cc_data[9]['Distance']: 
-            cc_data.pop()
+        elif dist < near_10_cc[9]['Distance']: 
+            near_10_cc.pop()
             insort(near_10_cc, cc_data, key=lambda x: x['Distance'])
-
-    print(near_10_cc)
     return near_10_cc
 
 def get_fires_dict():
@@ -86,8 +77,10 @@ def get_fires_dict():
                                                         processed_fires[i]['DangerRadius'],
                                                         hospital_list, 'Latitude', 'Longitude'))
 
-    print(get_nearest_10_cc(processed_fires[0]['Latitude'],
-                      processed_fires[0]['Longitude'],
-                      processed_fires[0]['DangerRadius']))
     
+        # processed_fires[i]['CommunityCenter'] = get_nearest_10_cc(processed_fires[i]['Latitude'],
+        #                                                     processed_fires[i]['Longitude'],
+        #                                                     processed_fires[i]['DangerRadius'])
+    get_all_communities_cali()  
+
     return processed_fires
