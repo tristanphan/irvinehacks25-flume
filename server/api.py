@@ -66,9 +66,12 @@ def get_nearest_10_cc(lat, lon, danger):
     print(near_10_cc)
     return near_10_cc
 
-def get_nearest_fires():
+def get_nearest_fires(lat, lon):
     fires_list = cal_fires_api()
-    
+    for fire in fires_list:
+        fire['Distance'] = geodesic((lat, lon), (fire['Latitude'], fire['Longitude'])).miles
+    fires_list.sort(key=lambda x: x['Distance'])
+    return fires_list
 
 def cal_fires_api():
     '''calls cal fire api and reformats data'''
