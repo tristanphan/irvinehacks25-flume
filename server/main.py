@@ -16,19 +16,19 @@ def index():
         reader = csv.reader(file)
         rows = list(reader)
     
-    keep_indices = [0, 2, 3, 8, 15, 16]
-    fac_names = set()
-    newrows = []
-    for j in range(len(rows)):
-        tent_r = [rows[j][i] for i in range(18) if i in keep_indices]
-        if tent_r[1] not in fac_names:
-            newrows.append(tent_r)
-            if j != 0:
-                fac_names.add(tent_r[1])
+    # keep_indices = [0, 2, 3, 8, 15, 16]
+    # fac_names = set()
+    # newrows = []
+    # for j in range(len(rows)):
+    #     tent_r = [rows[j][i] for i in range(18) if i in keep_indices]
+    #     if tent_r[1] not in fac_names:
+    #         newrows.append(tent_r)
+    #         if j != 0:
+    #             fac_names.add(tent_r[1])
 
-    with open('output.csv', 'w', newline='') as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerows(newrows)
+    # with open('output.csv', 'w', newline='') as csvfile:
+    #     writer = csv.writer(csvfile)
+    #     writer.writerows(newrows)
             
     
     return processed_fire_dict
