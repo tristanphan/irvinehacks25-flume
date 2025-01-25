@@ -1,4 +1,4 @@
-County Code,Facility Name,City,Building URL,Latitude,Longitude
+CountyCode,FacilityName,City,BuildingURL,Latitude,Longitude
 01 - Alameda,Alameda Hospital,Alameda,https://esp.oshpd.ca.gov/CitizenAccess/Cap/CapDetail.aspx?Module=Permits&TabName=Permits&capID1=26HIS&capID2=00000&capID3=00002&agencyCode=OSHPD,37.7626572,-122.2538986
 01 - Alameda,Alta Bates Summit Medical Center,Oakland,https://esp.oshpd.ca.gov/CitizenAccess/Cap/CapDetail.aspx?Module=Permits&TabName=Permits&capID1=37HIS&capID2=00000&capID3=00001&agencyCode=OSHPD,37.8208094,-122.2630806
 01 - Alameda,Alta Bates Summit Medical Center - Summit Campus,Oakland,https://esp.oshpd.ca.gov/CitizenAccess/Cap/CapDetail.aspx?Module=Permits&TabName=Permits&capID1=78HIS&capID2=00000&capID3=00013&agencyCode=OSHPD,37.8199008,-122.2643586
@@ -165,7 +165,7 @@ County Code,Facility Name,City,Building URL,Latitude,Longitude
 19 - Los Angeles,Valley Presbyterian Hospital,Van Nuys,https://esp.oshpd.ca.gov/CitizenAccess/Cap/CapDetail.aspx?Module=Permits&TabName=Permits&capID1=56HIS&capID2=00000&capID3=00020&agencyCode=OSHPD,34.1949463,-118.4632111
 19 - Los Angeles,West Covina Medical Center,West Covina,https://esp.oshpd.ca.gov/CitizenAccess/Cap/CapDetail.aspx?Module=Permits&TabName=Permits&capID1=53HIS&capID2=00000&capID3=00012&agencyCode=OSHPD,34.0713501,-117.9447784
 19 - Los Angeles,Whittier Hospital Medical Center,Whittier,https://esp.oshpd.ca.gov/CitizenAccess/Cap/CapDetail.aspx?Module=Permits&TabName=Permits&capID1=57HIS&capID2=00000&capID3=00038&agencyCode=OSHPD,33.950382,-118.004646
-20 - Madera,HealthBridge Central Valley Children’s Center,Madera,https://esp.oshpd.ca.gov/CitizenAccess/Cap/CapDetail.aspx?Module=Permits&TabName=Permits&capID1=22CAP&capID2=00000&capID3=006YL&agencyCode=OSHPD,36.881135,-119.807554
+20 - Madera,HealthBridge Central Valley Childrenï¿½s Center,Madera,https://esp.oshpd.ca.gov/CitizenAccess/Cap/CapDetail.aspx?Module=Permits&TabName=Permits&capID1=22CAP&capID2=00000&capID3=006YL&agencyCode=OSHPD,36.881135,-119.807554
 20 - Madera,Madera Community Hospital,Madera,https://esp.oshpd.ca.gov/CitizenAccess/Cap/CapDetail.aspx?Module=Permits&TabName=Permits&capID1=69HIS&capID2=00000&capID3=00006&agencyCode=OSHPD,36.9435844,-120.0443573
 20 - Madera,Valley Children's Hospital,Madera,https://esp.oshpd.ca.gov/CitizenAccess/Cap/CapDetail.aspx?Module=Permits&TabName=Permits&capID1=00HIS&capID2=00000&capID3=00063&agencyCode=OSHPD,36.8839378,-119.8008804
 21 - Marin,Kaiser Foundation Hospital - San Rafael,San Rafael,https://esp.oshpd.ca.gov/CitizenAccess/Cap/CapDetail.aspx?Module=Permits&TabName=Permits&capID1=64HIS&capID2=00000&capID3=00003&agencyCode=OSHPD,38.0039635,-122.5553665
