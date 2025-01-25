@@ -21,17 +21,19 @@ def get_nearest_10_h(lat, lon, danger_rad, listy, lat_field, lon_field):
             insort(near_10, hospital, key=lambda x: x['Distance'])
     return near_10
 
-def get_nearest_10_cc(lat, lon):
+def get_nearest_10_cc(lat, lon, danger):
+    near_10_cc = []
     api = overpy.Overpass()
     
     query = f"""
     (
+        area["name"="California"]->.searchArea;
         node["amenity"="community_centre"](around:{5000},{lat},{lon});
     );
     out body;
     """
     result = api.query(query)
-    
+    print(result)
     encoded_query = urllib.parse.urlencode({'data': query})
     
     url = "http://overpass-api.de/api/interpreter"
@@ -42,9 +44,27 @@ def get_nearest_10_cc(lat, lon):
 
     for element in data['elements']:
         name = element['tags'].get('name', 'Unknown')
-        lat = element['lat']
-        lon = element['lon']
-        return_data = f"Name: {name}, Location: ({lat}, {lon})"
+        cc_lat = element['lat']
+        cc_lon = element['lon']
+        dist = geodesic((lat, lon), (cc_lat, cc_lon)).miles
+
+        safe = True
+        if dist > danger: 
+            safe = True
+        else: 
+            safe = False
+
+        if (name != "Unknown"):
+            cc_data = f'{{"Name": "{name}", "Distance": {dist}, "Longitude": {lon}, "Latitude": {lat}, "Safe": {safe}}}'
+        
+        if len(near_10_cc) < 10: 
+            insort(near_10_cc, cc_data, key=lambda x: x['Distance'])
+        elif dist < cc_data[9]['Distance']: 
+            cc_data.pop()
+            insort(near_10_cc, cc_data, key=lambda x: x['Distance'])
+
+    print(near_10_cc)
+    return near_10_cc
 
 def get_fires_dict():
     fire_json = urllib.request.urlopen('https://incidents.fire.ca.gov/umbraco/api/IncidentApi/List?inactive=false&year=2025')
@@ -65,5 +85,9 @@ def get_fires_dict():
                                                         processed_fires[i]['Longitude'],
                                                         processed_fires[i]['DangerRadius'],
                                                         hospital_list, 'Latitude', 'Longitude'))
+
+    print(get_nearest_10_cc(processed_fires[0]['Latitude'],
+                      processed_fires[0]['Longitude'],
+                      processed_fires[0]['DangerRadius']))
     
     return processed_fires
