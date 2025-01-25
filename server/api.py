@@ -66,12 +66,20 @@ def get_nearest_10_cc(lat, lon, danger):
     print(near_10_cc)
     return near_10_cc
 
-def get_fires_dict():
+def get_nearest_fires():
+    fires_list = cal_fires_api()
+
+def cal_fires_api():
+    '''calls cal fire api and reformats data'''
     fire_json = urllib.request.urlopen('https://incidents.fire.ca.gov/umbraco/api/IncidentApi/List?inactive=false&year=2025')
     fire_dict = json.loads(fire_json.read())
     attr_list = ['Name', 'Updated', 'Started', 'County', 'Location', 'AcresBurned', 'PercentContained', 'Longitude', 'Latitude', 'Url', 'IsActive']
     processed_fires = [{attr:i[attr] for attr in attr_list} for i in fire_dict]
     for fire in processed_fires: fire['DangerRadius'] = (fire['AcresBurned'] * ACRES_TO_SQMILES) / 2
+    return processed_fires
+
+def get_fires_dict():
+    processed_fires = cal_fires_api()
     
     with open("static/ca_hospitals.csv", 'r') as cah:
         dict_reader = csv.DictReader(cah)
