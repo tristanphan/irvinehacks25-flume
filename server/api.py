@@ -68,6 +68,7 @@ def get_nearest_10_cc(lat, lon, danger):
 
 def get_nearest_fires():
     fires_list = cal_fires_api()
+    
 
 def cal_fires_api():
     '''calls cal fire api and reformats data'''
@@ -78,15 +79,18 @@ def cal_fires_api():
     for fire in processed_fires: fire['DangerRadius'] = (fire['AcresBurned'] * ACRES_TO_SQMILES) / 2
     return processed_fires
 
-def get_fires_dict():
-    processed_fires = cal_fires_api()
-    
+def ca_hospitals_info():
     with open("static/ca_hospitals.csv", 'r') as cah:
         dict_reader = csv.DictReader(cah)
         hospital_list = list(dict_reader)
         for hospital in hospital_list:
             hospital['Latitude'] = float(hospital['Latitude'])
             hospital['Longitude'] = float(hospital['Longitude'])
+    return hospital_list
+
+def get_fires_dict():
+    processed_fires = cal_fires_api()
+    hospital_list = ca_hospitals_info()
     
     for i in range(len(processed_fires)):
         processed_fires[i]['Hospitals'] = copy.deepcopy(get_nearest_10_h(processed_fires[i]['Latitude'],
