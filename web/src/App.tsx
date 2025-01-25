@@ -1,10 +1,8 @@
-import './App.css'
-
-import FireTracker from "./pages/FireTracker/FireTracker.tsx";
+import Home from "./pages/Home/Home.tsx";
 
 
 function App() {
-    return <FireTracker/>
+    return <Home/>
 }
 
 export default App

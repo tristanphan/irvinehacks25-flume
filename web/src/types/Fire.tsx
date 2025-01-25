@@ -1,9 +1,6 @@
-import LatLonLocation from "./LatLonLocation.tsx";
+import Place from "./Place.tsx";
 
-export default interface Fire {
-    name: string,
+export default interface Fire extends Place {
     locationStr: string,
     containmentPercent: number,
-    distanceMiles: number,
-    location: LatLonLocation,
 }
