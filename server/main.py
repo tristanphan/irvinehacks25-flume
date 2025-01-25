@@ -2,7 +2,7 @@ import urllib.request
 import urllib.parse
 import urllib.request
 import urllib.request
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import urllib, json, csv
 from api import *
 
