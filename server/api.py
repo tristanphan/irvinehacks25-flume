@@ -65,4 +65,5 @@ def get_fires_dict():
                                                         processed_fires[i]['Longitude'],
                                                         processed_fires[i]['DangerRadius'],
                                                         hospital_list, 'Latitude', 'Longitude'))
+    
     return processed_fires
