@@ -2,7 +2,7 @@ import urllib.request
 import urllib.parse
 import urllib.request
 import urllib.request
-from flask import Flask, session, redirect, url_for
+from flask import Flask, jsonify
 import urllib, json, csv
 from api import *
 
@@ -12,7 +12,7 @@ app = Flask(__name__)
 def index():
     fires_dict = get_fires_dict()
     
-    return fires_dict
+    return jsonify(fires_dict), 200
 
 @app.route("/OpenStreetView", methods=['GET', 'POST'])
 def OpenStreetViewAPI(): 
