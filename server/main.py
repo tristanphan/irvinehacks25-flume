@@ -1,20 +1,18 @@
+import urllib.request
 import urllib.parse
+import urllib.request
 import urllib.request
 from flask import Flask, session, redirect, url_for
 import urllib, json, csv
+from api import *
 
 app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
-    fire_json = urllib.request.urlopen('https://incidents.fire.ca.gov/umbraco/api/IncidentApi/List?inactive=false&year=2025')
-    fire_dict = json.loads(fire_json.read())
-    attr_list = ['Name', 'Updated', 'Started', 'County', 'Location', 'AcresBurned', 'PercentContained', 'Longitude', 'Latitude', 'Url', 'IsActive']
-    processed_fire_dict = [{attr:i[attr] for attr in attr_list} for i in fire_dict]
-    # print(processed_fire_dict)
-            
+    fires_dict = get_fires_dict()
     
-    return processed_fire_dict
+    return fires_dict
 
 @app.route("/OpenStreetView", methods=['GET', 'POST'])
 def OpenStreetViewAPI(): 
