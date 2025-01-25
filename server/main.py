@@ -3,10 +3,12 @@ import urllib.parse
 import urllib.request
 import urllib.request
 from flask import Flask, session, redirect, url_for, request
+from flask_cors import CORS
 import urllib, json, csv
 from api import *
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/", methods=['GET', 'POST'])
 def index():
