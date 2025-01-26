@@ -148,7 +148,7 @@ def get_nearest_10_person_cc(fires, lat, lon):
         if num_unsafe == max_unsafe and not safe: continue
 
         if (name != "Unknown"):
-            cc_data = {"Name": name, "Distance": dist, "Longitude": lon, "Latitude": lat, "Safe": safe}
+            cc_data = {"Name": name, "Distance": dist, "Longitude": cc_lat, "Latitude": cc_lon, "Safe": safe}
 
         if len(near_10_cc) < 10: 
             insort(near_10_cc, cc_data, key=lambda x: x['Distance'])
@@ -157,6 +157,7 @@ def get_nearest_10_person_cc(fires, lat, lon):
             near_10_cc.pop()
             insort(near_10_cc, cc_data, key=lambda x: x['Distance'])
             if not safe: num_unsafe += 1
+        
     return near_10_cc
 
 def get_person_location_dict(lat, lon):
