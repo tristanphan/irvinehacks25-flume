@@ -16,9 +16,9 @@ def index():
         fires_dict = get_fires_dict()
         return fires_dict
     else: 
-        lat = request.form.get('latitude')
-        lon = request.form.get('longitude')
-        print(lat, lon)
+        data = json.loads(request.data)
+        lat = data.get('latitude')
+        lon = data.get('longitude')
         return get_person_location_dict(lat, lon)
 
 
