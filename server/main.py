@@ -53,4 +53,4 @@ def OpenStreetViewAPI():
     with open("static/community_center_data.json", "w") as file:
         json.dump(community_centers, file, indent=4)
 
-    return community_centers, 400
+    return community_centers, 200
