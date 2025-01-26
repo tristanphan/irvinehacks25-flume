@@ -160,7 +160,7 @@ def get_nearest_10_person_cc(fires, lat, lon):
     return near_10_cc
 
 def get_person_location_dict(lat, lon):
-    processed_fires = cal_fires_api()
+    processed_fires = get_nearest_fires(lat, lon)
     hospital_list = ca_hospitals_info()
     
     hospital = copy.deepcopy(get_nearest_10_person_h(processed_fires,
