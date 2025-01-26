@@ -24,28 +24,21 @@ def get_nearest_10_h(lat, lon, danger_rad, listy, lat_field, lon_field):
 
 def get_nearest_10_cc(lat,lon, danger):
     near_10_cc = []
-    api = overpy.Overpass()
     
-    query = f"""
-    (
-        area["name"="California"]->.searchArea;
-        node["amenity"="community_centre"](around:{10000},{lat},{lon});
-    );
-    out body;
-    """
-    data = api.query(query)    
+    with open('static/community_center_data.json', 'r') as file:
+        data = json.load(file)
 
-    for element in data.nodes:
+    for element in data:
         name = element.tags.get("name", "Unknown")
         cc_lat = element.lat
         cc_lon = element.lon
         dist = geodesic((lat, lon), (cc_lat, cc_lon)).miles
 
-#         safe = True
-#         if dist > danger: 
-#             safe = True
-#         else: 
-#             safe = False
+        safe = True
+        if dist > danger: 
+            safe = True
+        else: 
+            safe = False
 
         if (name != "Unknown"):
             cc_data = {"Name": name, "Distance": dist, "Longitude": lon, "Latitude": lat, "Safe": safe}
@@ -93,8 +86,8 @@ def get_fires_dict():
                                                         hospital_list, 'Latitude', 'Longitude'))
 
     
-        # processed_fires[i]['CommunityCenter'] = get_nearest_10_cc(processed_fires[i]['Latitude'],
-        #                                                     processed_fires[i]['Longitude'],
-        #                                                     processed_fires[i]['DangerRadius'])
+        processed_fires[i]['CommunityCenter'] = get_nearest_10_cc(processed_fires[i]['Latitude'],
+                                                            processed_fires[i]['Longitude'],
+                                                            processed_fires[i]['DangerRadius'])
 
     return processed_fires
