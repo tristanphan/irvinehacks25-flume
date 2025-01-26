@@ -1,10 +1,18 @@
 import urllib, json, csv
 from bisect import insort
 from geopy.distance import geodesic
-import overpy
+import datetime
+import time
 import copy
 
 ACRES_TO_SQMILES = 0.0015625
+
+try:
+    f = open("keys/key_openweather.txt", "r")
+    key_openweather = f.readline()
+    f.close()
+except:
+    print("RISK ERROR: Key not found")
 
 def is_safe(lat, lon, fires_list) -> bool:
     safe = True
@@ -15,7 +23,7 @@ def is_safe(lat, lon, fires_list) -> bool:
             break
     return safe
 
-def calc_danger(lat, lon, fires_list) -> str:
+def calc_danger(fires_list) -> dict[str, str]:
     danger_lvl = 'None'
     distance = 0
     name = ''
@@ -44,12 +52,60 @@ def calc_danger(lat, lon, fires_list) -> str:
             name = fire['Name']
             addon = 'but it has a low chance of reaching you'
     
-    if danger_lvl == 'None': message = 'You are far from all fires'
+    if danger_lvl == 'None': message = 'You are far from all fires.'
     else: message = f'You are {round(distance)} miles from {name}, the closest fire, {addon}.'
     
     danger_info = {'DangerLevel':danger_lvl, 'Message':message}
     
     return danger_info
+
+def subtract_weeks_from_timestamp(timestamp, weeks):
+    '''Subtracts a number of weeks from a Unix timestamp.'''
+    dt = datetime.datetime.fromtimestamp(timestamp)
+    delta = datetime.timedelta(weeks=weeks)
+    new_dt = dt - delta
+    return int(new_dt.timestamp())
+
+def calc_risk(lat, lon) -> dict[str, str]:
+    current_json = urllib.request.urlopen(f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={key_openweather}&units=imperial')
+    current_weather = json.loads(current_json.read())
+    print(current_weather)
+    
+    risk_lvl = 0
+    risk_factor = 'None'
+    temp='under 80 degrees'
+    hum='over 30'
+    wind='under 15'
+    if current_weather['main']['temp'] >= 95: 
+        risk_lvl += 1
+        temp='over 95 degrees'
+    elif current_weather['main']['temp'] >= 80: 
+        risk_lvl += .5
+        temp='over 80 degrees'
+    
+    if current_weather['main']['humidity'] <= 20: 
+        risk_lvl += 1
+        hum='under 20'
+    elif current_weather['main']['humidity'] <= 30: 
+        risk_lvl += .5
+        hum='under 30'
+    
+    if current_weather['wind']['speed'] >= 25: 
+        risk_lvl += 1
+        wind='over 25'
+    elif current_weather['wind']['speed'] >= 15: 
+        risk_lvl += .5
+        wind='over 15'
+    
+    if risk_lvl > 2:
+        risk_factor = 'High'
+    elif risk_lvl > 1:
+        risk_factor = 'Moderate'
+    elif risk_lvl > 0:
+        risk_factor = 'Low'
+    
+    message = f'Your temperature is {temp}, humidity is {hum}%, and wind speed is {wind}mph.'
+    return {'RiskFactor':risk_factor, 'Message':message}
 
 def get_nearest_10_h(lat, lon, danger_rad, listy, lat_field, lon_field):
     near_10 = []
@@ -206,7 +262,9 @@ def get_person_location_dict(lat, lon):
     
     community_center = get_nearest_10_person_cc(processed_fires, lat, lon)
     
-    danger_info = calc_danger(lat, lon, processed_fires)
+    danger_info = calc_danger(processed_fires)
+    
+    risk_info = calc_risk(lat, lon)
 
-    info_dict = {"Fires": processed_fires, "Hospitals": hospital, "CommunityCenter": community_center, 'Danger': danger_info}
+    info_dict = {"Fires": processed_fires, "Hospitals": hospital, "CommunityCenter": community_center, 'Danger': danger_info, 'Risk': risk_info}
     return info_dict

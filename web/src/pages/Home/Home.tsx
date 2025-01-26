@@ -1,13 +1,15 @@
 import {SyntheticEvent, useEffect, useState} from "react";
 import LatLonLocation from "../../types/LatLonLocation.tsx";
 import Frame from "../../components/Frame.tsx";
-import {Box, Fab, Tab, Tabs} from "@mui/material";
+import {Box, Fab, Tab, Tabs, Typography, Grid2} from "@mui/material";
 import MapView from "./MapView.tsx";
 import Fire from "../../types/Fire.tsx";
 import getInfo from "../../api/getInfo.tsx";
 import {Map} from "leaflet";
 import CommunityCenter from "../../types/CommunityCenter.tsx";
 import Hospital from "../../types/Hospital.tsx";
+import Danger from "../../types/Danger.tsx";
+import Risk from "../../types/Risk.tsx";
 import PlaceList from "./PlaceList.tsx";
 import Place from "../../types/Place.tsx";
 import {LocationOn} from "@mui/icons-material";
@@ -20,6 +22,8 @@ export default function Home() {
     const [fires, setFires] = useState<Fire[] | undefined>(undefined);
     const [hospitals, setHospitals] = useState<Hospital[] | undefined>(undefined);
     const [communityCenters, setCommunityCenters] = useState<CommunityCenter[] | undefined>(undefined);
+    const [danger, setDanger] = useState<Danger | undefined>(undefined);
+    const [risk, setRisk] = useState<Risk | undefined>(undefined);
 
     const [map, setMap] = useState<Map | undefined>(undefined);
 
@@ -39,6 +43,8 @@ export default function Home() {
                 setFires(undefined);
                 setHospitals(undefined);
                 setCommunityCenters(undefined);
+                setDanger(undefined);
+                setRisk(undefined);
                 setDoneLoadingInfo(true)
             });
     }, []);
@@ -94,11 +100,13 @@ export default function Home() {
                 onClick={() => navigator.geolocation.getCurrentPosition((position) => {
                     console.log("location:", [position.coords.latitude, position.coords.longitude])
                     getInfoWithLocation(position.coords)
-                        .then(({fires, hospitals, communityCenters}) => {
+                        .then(({fires, hospitals, communityCenters, danger, risk}) => {
                             setLocation(position.coords)
                             setFires(fires);
                             setHospitals(hospitals);
                             setCommunityCenters(communityCenters)
+                            setDanger(danger)
+                            setRisk(risk)
                             map?.flyTo([position.coords.latitude, position.coords.longitude], undefined, {duration: 1})
                         })
                 })}
@@ -120,11 +128,72 @@ export default function Home() {
                         <Tab label="Community Centers"/>
                         <Tab label="Emergency"/>
                     </Tabs>
-                </Box>}
+                </Box>
+                
+            }
             <MapView location={location} placeList={places} setMap={setMap}/>
+
+            {(location !== undefined) &&
+            <Grid2 
+                container 
+                justifyContent="center" 
+                alignItems="center" 
+                spacing={4} // Adjust spacing between items
+                sx={{ mt: 2, mb: -2 }}
+                >
+                {/* Danger Level Section */}
+                <Grid2 
+                    item 
+                    xs={12} 
+                    sm={6} 
+                    textAlign="center" // Center text within each grid item
+                >
+                    <Typography 
+                    variant="h6" 
+                    lineHeight={1.5} 
+                    fontWeight="bold" 
+                    color="error.main"
+                    >
+                    ⚠️ Danger Level: {danger?.dangerLevel || "N/A"}
+                    </Typography>
+                    <Typography 
+                    variant="body2" 
+                    color="textSecondary" 
+                    lineHeight={1.2}
+                    >
+                    {danger?.message || "No additional details"}
+                    </Typography>
+                </Grid2>
+
+                {/* Risk Factor Section */}
+                <Grid2 
+                    item 
+                    xs={12} 
+                    sm={6} 
+                    textAlign="center"
+                >
+                    <Typography 
+                    variant="h6" 
+                    lineHeight={1.5} 
+                    fontWeight="bold" 
+                    color="warning.main"
+                    >
+                    🔥 Risk Factor: {risk?.riskFactor || "N/A"}
+                    </Typography>
+                    <Typography 
+                    variant="body2" 
+                    color="textSecondary" 
+                    lineHeight={1.2}
+                    >
+                    {risk?.message || "No additional details"}
+                    </Typography>
+                </Grid2>
+                </Grid2>
+            }
             <br/>
             <PlaceList placeList={places} map={map}/>
             <div style={{paddingBottom: 80}}/>
+
         </Box>
     </Frame>
 }

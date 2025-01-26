@@ -2,6 +2,8 @@ import LatLonLocation from "../types/LatLonLocation.tsx";
 import Fire from "../types/Fire.tsx";
 import CommunityCenter from "../types/CommunityCenter.tsx";
 import Hospital from "../types/Hospital.tsx";
+import Danger from "../types/Danger.tsx";
+import Risk from "../types/Risk.tsx";
 import ENDPOINT from "./endpoint.tsx";
 import IconType from "../types/IconType.tsx";
 
@@ -11,6 +13,8 @@ interface GetInfoOutputWithLocation {
     fires: Fire[],
     hospitals: Hospital[],
     communityCenters: CommunityCenter[],
+    danger: Danger,
+    risk: Risk
 }
 
 export default async function getInfoWithLocation(location: LatLonLocation): Promise<GetInfoOutputWithLocation> {
@@ -386,5 +390,16 @@ export default async function getInfoWithLocation(location: LatLonLocation): Pro
             distanceMiles: dataCommunityCenter["Distance"] as number | undefined,
         })) as (value: object) => CommunityCenter)
 
-    return {fires, hospitals, communityCenters}
+    const danger: Danger = {
+        dangerLevel: data["Danger"]["DangerLevel"] as string,
+        message: data["Danger"]["Message"] as string,
+    };
+
+    const risk: Risk = {
+        message: data["Risk"]["Message"] as string,
+        riskFactor: data["Risk"]["RiskFactor"] as string,
+    };
+
+
+    return {fires, hospitals, communityCenters, danger, risk}
 }
