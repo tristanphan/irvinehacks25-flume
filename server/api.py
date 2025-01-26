@@ -8,23 +8,30 @@ ACRES_TO_SQMILES = 0.0015625
 
 def get_nearest_10_h(lat, lon, danger_rad, listy, lat_field, lon_field):
     near_10 = []
+    num_unsafe = 0
+    max_unsafe = 5
     for hospital in listy:
         dist = geodesic((lat, lon), (hospital[lat_field], hospital[lon_field])).miles
         hospital['Distance'] = dist
         if dist > danger_rad: hospital['Safe'] = True
         else: hospital['Safe'] = False
         
+        if num_unsafe == max_unsafe and not hospital['Safe']: continue
+        
         if len(near_10) < 10: 
             insort(near_10, hospital, key=lambda x: x['Distance'])
+            if not hospital['Safe']: num_unsafe += 1
         elif dist < near_10[9]['Distance']: 
             near_10.pop()
             insort(near_10, hospital, key=lambda x: x['Distance'])
+            if not hospital['Safe']: num_unsafe += 1
     return near_10
 
 
 def get_nearest_10_cc(lat,lon, danger):
     near_10_cc = []
-    
+    num_unsafe = 0
+    max_unsafe = 5
     with open('static/community_center_data.json', 'r') as file:
         data = json.load(file)
 
@@ -39,15 +46,19 @@ def get_nearest_10_cc(lat,lon, danger):
             safe = True
         else: 
             safe = False
+            
+        if num_unsafe == max_unsafe and not safe: continue
 
         if (name != "Unknown"):
             cc_data = {"Name": name, "Distance": dist, "Longitude": lon, "Latitude": lat, "Safe": safe}
 
         if len(near_10_cc) < 10: 
             insort(near_10_cc, cc_data, key=lambda x: x['Distance'])
+            if not safe: num_unsafe += 1
         elif dist < near_10_cc[9]['Distance']: 
             near_10_cc.pop()
             insort(near_10_cc, cc_data, key=lambda x: x['Distance'])
+            if not safe: num_unsafe += 1
     return near_10_cc
 
 def get_nearest_fires(lat, lon):
