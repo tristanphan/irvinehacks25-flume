@@ -12,6 +12,7 @@ def is_safe(lat, lon, fires_list) -> bool:
     for fire in fires_list:
         if geodesic((lat, lon), (fire['Latitude'], fire['Longitude'])).miles < fire['DangerRadius']:
             safe = False
+            break
     return safe
 
 def get_nearest_10_h(lat, lon, danger_rad, listy, lat_field, lon_field):
