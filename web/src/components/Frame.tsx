@@ -16,7 +16,7 @@ export default function Frame({children}: {children: ReactNode}) {
             <Toolbar style={{backgroundColor: "darkred"}}>
                 <LocalFireDepartment sx={{paddingRight: 1}} fontSize={"medium"}/>
                 <Typography fontWeight={"bold"} fontSize={"16pt"}>
-                    FireHacks
+                    Flüme
                 </Typography>
             </Toolbar>
         </AppBar>

@@ -1,7 +1,7 @@
 import {SyntheticEvent, useEffect, useState} from "react";
 import LatLonLocation from "../../types/LatLonLocation.tsx";
 import Frame from "../../components/Frame.tsx";
-import {Box, Button, Fab, Tab, Tabs} from "@mui/material";
+import {Box, Fab, Tab, Tabs} from "@mui/material";
 import MapView from "./MapView.tsx";
 import Fire from "../../types/Fire.tsx";
 import getInfo from "../../api/getInfo.tsx";
@@ -12,7 +12,6 @@ import PlaceList from "./PlaceList.tsx";
 import Place from "../../types/Place.tsx";
 import {LocationOn} from "@mui/icons-material";
 import getInfoWithLocation from "../../api/getInfoWithLocation.tsx";
-import Cardlist from "./DropdownList.tsx";
 
 export default function Home() {
     const [location, setLocation] = useState<LatLonLocation | undefined>(undefined);
@@ -88,26 +87,25 @@ export default function Home() {
     } else places.push(...fires)
     return <Frame>
         <Box pt={10} pl={4} pr={4} width={"100%"}>
-            {(location === undefined) &&
-                <Fab
-                    variant="extended"
-                    style={{position: "fixed", bottom: 24, right: 16}}
-                    color={"secondary"}
-                    onClick={() => navigator.geolocation.getCurrentPosition((position) => {
-                        console.log("location:", [position.coords.latitude, position.coords.longitude])
-                        getInfoWithLocation(position.coords)
-                            .then(({fires, hospitals, communityCenters}) => {
-                                setLocation(position.coords)
-                                setFires(fires);
-                                setHospitals(hospitals);
-                                setCommunityCenters(communityCenters)
-                                map?.flyTo([position.coords.latitude, position.coords.longitude], undefined, {duration: 1})
-                            })
-                    })}
-                >
-                    <LocationOn sx={{mr: 1}}/>
-                    Locate me
-                </Fab>}
+            <Fab
+                variant="extended"
+                style={{position: "fixed", bottom: 24, right: 16}}
+                color={"secondary"}
+                onClick={() => navigator.geolocation.getCurrentPosition((position) => {
+                    console.log("location:", [position.coords.latitude, position.coords.longitude])
+                    getInfoWithLocation(position.coords)
+                        .then(({fires, hospitals, communityCenters}) => {
+                            setLocation(position.coords)
+                            setFires(fires);
+                            setHospitals(hospitals);
+                            setCommunityCenters(communityCenters)
+                            map?.flyTo([position.coords.latitude, position.coords.longitude], undefined, {duration: 1})
+                        })
+                })}
+            >
+                <LocationOn sx={{mr: 1}}/>
+                Locate me
+            </Fab>
             {(location !== undefined) &&
                 <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
                     <Tabs
@@ -126,8 +124,7 @@ export default function Home() {
             <MapView location={location} placeList={places} setMap={setMap}/>
             <br/>
             <PlaceList placeList={places} map={map}/>
-            {/*<Cardlist fireList={fires} map={map}/>*/}
-
+            <div style={{paddingBottom: 80}}/>
         </Box>
     </Frame>
 }
