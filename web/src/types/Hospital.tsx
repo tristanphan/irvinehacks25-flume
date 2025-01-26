@@ -1,5 +1,8 @@
 import Place from "./Place.tsx";
 
 export default interface Hospital extends Place {
-    addressStr: string,
+    city: string,
+    countyCode: string
+    url: string
+    safe: boolean
 }

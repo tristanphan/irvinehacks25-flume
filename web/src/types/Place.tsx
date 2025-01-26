@@ -5,6 +5,6 @@ export default interface Place {
     iconType: IconType,
     name: string,
     location: LatLonLocation,
-    radius?: number,
-    distanceMiles: number,
+    radiusMiles?: number,
+    distanceMiles?: number,
 }

@@ -1,7 +1,7 @@
 import {SyntheticEvent, useEffect, useState} from "react";
 import LatLonLocation from "../../types/LatLonLocation.tsx";
 import Frame from "../../components/Frame.tsx";
-import {Box, Tab, Tabs} from "@mui/material";
+import {Box, Button, Tab, Tabs} from "@mui/material";
 import MapView from "./MapView.tsx";
 import Fire from "../../types/Fire.tsx";
 import getInfo from "../../api/getInfo.tsx";
@@ -10,6 +10,7 @@ import CommunityCenter from "../../types/CommunityCenter.tsx";
 import Hospital from "../../types/Hospital.tsx";
 import PlaceList from "./PlaceList.tsx";
 import Place from "../../types/Place.tsx";
+import getInfoWithLocation from "../../api/getInfoWithLocation.tsx";
 
 export default function Home() {
     const [doneLoadingLocation, setDoneLoadingLocation] = useState<boolean>(false);
@@ -38,14 +39,22 @@ export default function Home() {
                     }
                     setLocation(thisLocation);
                     setDoneLoadingLocation(true);
-                    getInfo({location: thisLocation}).then(result => {
+                    // getInfoWithLocation({location: thisLocation}).then(result => {
+                    //         setFires(result.fires);
+                    //         setHospitals(result.hospitals);
+                    //         setCommunityCenters(result.communityCenters);
+                    //         setDoneLoadingInfo(true);
+                    //     },
+                    //     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                    //     _error => setDoneLoadingInfo(true));
+                    getInfo().then(result => {
                             setFires(result.fires);
-                            setHospitals(result.hospitals);
-                            setCommunityCenters(result.communityCenters);
                             setDoneLoadingInfo(true);
                         },
                         // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                        _error => setDoneLoadingInfo(true));
+                        _error => {
+                            setDoneLoadingInfo(true)
+                        });
                 },
                 (error: GeolocationPositionError) => {
                     console.error("oh damn: " + error);
@@ -85,7 +94,7 @@ export default function Home() {
         </Frame>
     }
 
-    if (fires === undefined || hospitals === undefined || communityCenters === undefined) {
+    if (fires === undefined) {
         if (doneLoadingInfo) return <Frame>
             <Box
                 display="flex"
@@ -113,18 +122,18 @@ export default function Home() {
     const places: Place[] = [];
     if (tabIndex === 0) {
         places.push(...fires)
-        places.push(...hospitals)
-        places.push(...communityCenters)
+        // places.push(...hospitals)
+        // places.push(...communityCenters)
     } else if (tabIndex === 1) {
         places.push(...fires)
     } else if (tabIndex === 2) {
-        places.push(...communityCenters)
+        // places.push(...communityCenters)
     } else if (tabIndex === 3) {
-        places.push(...hospitals)
+        // places.push(...hospitals)
     }
-    places.sort(function (a, b) {
-        return a.distanceMiles - b.distanceMiles;
-    });
+    // places.sort(function (a, b) {
+    //     return a.distanceMiles - b.distanceMiles;
+    // });
 
     return <Frame>
         <Box pt={10} pl={4} pr={4} width={"100%"}>
