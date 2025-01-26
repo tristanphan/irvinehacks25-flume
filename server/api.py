@@ -29,9 +29,9 @@ def get_nearest_10_cc(lat,lon, danger):
         data = json.load(file)
 
     for element in data:
-        name = element.tags.get("name", "Unknown")
-        cc_lat = element.lat
-        cc_lon = element.lon
+        name = element["Name"]
+        cc_lat = element["Latitude"]
+        cc_lon = element["Longitude"]
         dist = geodesic((lat, lon), (cc_lat, cc_lon)).miles
 
         safe = True
