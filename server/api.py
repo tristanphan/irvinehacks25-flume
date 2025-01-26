@@ -80,7 +80,7 @@ def cal_fires_api():
     fire_dict = json.loads(fire_json.read())
     attr_list = ['Name', 'Updated', 'Started', 'County', 'Location', 'AcresBurned', 'PercentContained', 'Longitude', 'Latitude', 'Url', 'IsActive']
     processed_fires = [{attr:i[attr] for attr in attr_list} for i in fire_dict]
-    for fire in processed_fires: fire['DangerRadius'] = (fire['AcresBurned'] * ACRES_TO_SQMILES) / 2
+    for fire in processed_fires: fire['DangerRadius'] = ((fire['AcresBurned'] * ACRES_TO_SQMILES) * 2)**.5
     return processed_fires
 
 def ca_hospitals_info():
