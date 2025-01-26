@@ -117,13 +117,8 @@ def get_nearest_10_person_h(fires, lat, lon, listy, lat_field, lon_field):
         dist = geodesic((lat, lon), (hospital[lat_field], hospital[lon_field])).miles
         hospital['Distance'] = dist
         
-        for i in range(len(fires)):
-            if dist > fires[i]["DangerRadius"]: 
-                hospital['Safe'] = True
-            else: 
-                hospital['Safe'] = False
-                break
-        
+        hospital['Safe'] = is_safe(lat, lon, fires)
+    
         if num_unsafe == max_unsafe and not hospital['Safe']: continue
         
         if len(near_10) < 10: 
@@ -148,13 +143,7 @@ def get_nearest_10_person_cc(fires, lat, lon):
         cc_lon = element["Longitude"]
         dist = geodesic((lat, lon), (cc_lat, cc_lon)).miles
 
-
-        for i in range(len(fires)):
-            if dist > fires[i]["DangerRadius"]: 
-                safe = True
-            else: 
-                safe = False
-                break
+        safe = is_safe(lat, lon, fires)
             
         if num_unsafe == max_unsafe and not safe: continue
 
@@ -174,13 +163,11 @@ def get_person_location_dict(lat, lon):
     processed_fires = cal_fires_api()
     hospital_list = ca_hospitals_info()
     
-    processed_fires[0]['Hospitals'] = copy.deepcopy(
-                                            get_nearest_10_person_h(processed_fires,
-                                            lat, lon, hospital_list, 'Latitude', 'Longitude'))
+    hospital = copy.deepcopy(get_nearest_10_person_h(processed_fires,
+                            lat, lon, hospital_list, 'Latitude', 'Longitude'))
 
     
-        # processed_fires[i]['CommunityCenter'] = get_nearest_10_cc(processed_fires, processed_fires[i]['Latitude'],
-        #                                                     processed_fires[i]['Longitude'],
-        #                                                     processed_fires[i]['DangerRadius'])
+    community_center = get_nearest_10_person_cc(processed_fires, lat, lon)
 
-    return processed_fires
+    info_dict = {"Fires": processed_fires, "Hospitals": hospital, "CommuityCenter": community_center}
+    return info_dict

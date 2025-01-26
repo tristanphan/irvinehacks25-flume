@@ -19,6 +19,7 @@ def index():
         data = json.loads(request.data)
         lat = data.get('latitude')
         lon = data.get('longitude')
+        print(lat, lon)
         return get_person_location_dict(lat, lon)
 
 
