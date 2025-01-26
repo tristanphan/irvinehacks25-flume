@@ -1,5 +1,5 @@
 import {Box, ButtonBase, Divider, Grid2, Paper, Typography} from "@mui/material";
-import {ReactNode} from "react";
+import {ReactNode, useState} from "react";
 import {Map} from "leaflet";
 import Place from "../../types/Place.tsx";
 import Fire from "../../types/Fire.tsx";
@@ -26,7 +26,7 @@ function ListCard<T extends Place>({place, map, generateCardContents}: ListCardI
             style={{borderRadius: 12}}
         >
             <Paper elevation={5} style={{borderRadius: 12}}>
-                <Box p={1} width={500}>
+                <Box p={1} width={600}>
                     {generateCardContents(place)}
                 </Box>
             </Paper>
@@ -64,15 +64,17 @@ function generateFireCard(fire: Fire) {
         <Grid2>
             <LocalFireDepartment fontSize={"large"} htmlColor={"tomato"}/>
         </Grid2>
-        <Grid2 width={60} textAlign={"right"} pr={1}>
-            <Typography variant={"h5"} lineHeight={1.25}>{fire.distanceMiles}</Typography>
-            <Typography variant={"subtitle2"} lineHeight={1}>miles</Typography>
-        </Grid2>
-        <Divider orientation="vertical" flexItem/>
+        {(fire.distanceMiles !== undefined) &&
+            <>
+                <Grid2 width={60} textAlign={"right"} pr={1}>
+                    <Typography variant={"h5"} lineHeight={1.25}>{Math.round(fire.distanceMiles)}</Typography>
+                    <Typography variant={"subtitle2"} lineHeight={1}>miles</Typography>
+                </Grid2>
+                <Divider orientation="vertical" flexItem/></>}
         <Grid2 textAlign={"left"} pl={1}>
             <Typography variant={"h5"} lineHeight={1.25}>{fire.name}</Typography>
             <Typography variant={"subtitle2"}
-                        lineHeight={1}>{`${fire.county} • ${fire.containmentPercent}% contained`}</Typography>
+                        lineHeight={1}>{`${fire.county} • ${fire.acresBurned} acres burned • ${fire.containmentPercent}% contained`}</Typography>
         </Grid2>
     </Grid2>
 }
@@ -82,12 +84,15 @@ function generateHospitalCard(hospital: Hospital) {
         <Grid2>
             <LocalHospital fontSize={"large"} htmlColor={"red"}/>
         </Grid2>
-        <Grid2 width={60} textAlign={"right"} pr={1}>
-            <Typography variant={"h5"} lineHeight={1.25}>{hospital.distanceMiles}</Typography>
-            <Typography variant={"subtitle2"} lineHeight={1}>miles</Typography>
-        </Grid2>
-        <Divider orientation="vertical" flexItem/>
-        <Grid2 textAlign={"left"} pl={1}>
+        {(hospital.distanceMiles !== undefined) &&
+            <>
+                <Grid2 width={60} textAlign={"right"} pr={1}>
+                    <Typography variant={"h5"} lineHeight={1.25}>{Math.round(hospital.distanceMiles)}</Typography>
+                    <Typography variant={"subtitle2"} lineHeight={1}>miles</Typography>
+                </Grid2>
+                <Divider orientation="vertical" flexItem/>
+            </>}
+        <Grid2 textAlign={"left"} pl={1} flex={1}>
             <Typography variant={"h5"} lineHeight={1.25}>{hospital.name}</Typography>
             <Typography variant={"subtitle2"}
                         lineHeight={1}>{hospital.city}</Typography>
@@ -100,15 +105,19 @@ function generateCommunityCenterCard(communityCenter: CommunityCenter) {
         <Grid2>
             <Diversity3Rounded fontSize={"large"} htmlColor={"brown"}/>
         </Grid2>
-        <Grid2 width={60} textAlign={"right"} pr={1}>
-            <Typography variant={"h5"} lineHeight={1.25}>{communityCenter.distanceMiles}</Typography>
-            <Typography variant={"subtitle2"} lineHeight={1}>miles</Typography>
-        </Grid2>
-        <Divider orientation="vertical" flexItem/>
+        {(communityCenter.distanceMiles !== undefined) &&
+            <>
+                <Grid2 width={60} textAlign={"right"} pr={1}>
+                    <Typography variant={"h5"}
+                                lineHeight={1.25}>{Math.round(communityCenter.distanceMiles)}</Typography>
+                    <Typography variant={"subtitle2"} lineHeight={1}>miles</Typography>
+                </Grid2>
+                <Divider orientation="vertical" flexItem/>
+            </>}
         <Grid2 textAlign={"left"} pl={1}>
             <Typography variant={"h5"} lineHeight={1.25}>{communityCenter.name}</Typography>
             <Typography variant={"subtitle2"}
-                        lineHeight={1}>{communityCenter.location.latitude}</Typography>
+                        lineHeight={1}>Community Center for Evacuation</Typography>
         </Grid2>
     </Grid2>
 }

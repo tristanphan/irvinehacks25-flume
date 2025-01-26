@@ -57,6 +57,7 @@ export default async function getInfo(): Promise<GetInfoOutput> {
                 distanceMiles: dataCommunityCenter["Distance"] as number | undefined,
             })) as (value: object) => CommunityCenter)
     }))
+    console.log("processed data get:", fires)
 
     return {fires}
 }

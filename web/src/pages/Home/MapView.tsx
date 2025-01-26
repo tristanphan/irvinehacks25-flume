@@ -4,14 +4,19 @@ import LatLonLocation from "../../types/LatLonLocation.tsx";
 import {ReactNode} from "react";
 import Place from "../../types/Place.tsx";
 import L, {Map} from 'leaflet';
+import Fire from "../../types/Fire.tsx";
 
 interface MapInputs {
-    location: LatLonLocation
+    location?: LatLonLocation
     placeList: Place[]
     setMap: (map: Map) => void
 }
 
 // const position = [51.505, -0.09]
+const defaultLocation = {
+    latitude: 34.0549,
+    longitude: -118.2426,
+}
 export default function MapView({location, placeList, setMap}: MapInputs) {
     const healthIcon = new L.Icon({
         // iconUrl: 'https://raw.githubusercontent.com/google/material-design-icons/refs/heads/master/src/maps/local_hospital/materialicons/24px.svg',
@@ -29,12 +34,17 @@ export default function MapView({location, placeList, setMap}: MapInputs) {
         iconSize: [35, 35]
     })
 
+    const selfIcon = new L.Icon({
+        iconUrl: "https://cdn.prod.website-files.com/62c5e0898dea0b799c5f2210/62e8212acc540f291431bad2_location-icon.png",
+        iconSize: [35, 35]
+    })
+
     const markers: ReactNode[] = []
     for (const place of placeList) {
         if (place.radiusMiles === undefined)
             markers.push(
                 <Marker position={[place.location.latitude, place.location.longitude]}
-                        icon={place.iconType == 1 ? healthIcon : communityIcon}>
+                        icon={place.iconType == 1 ? healthIcon : place.iconType == 2 ? communityIcon : fireIcon}>
                     <Popup>
                         {place.name}
                     </Popup>
@@ -43,7 +53,7 @@ export default function MapView({location, placeList, setMap}: MapInputs) {
         else
             markers.push(
                 <Circle center={[place.location.latitude, place.location.longitude]} pathOptions={{color: 'red'}}
-                        radius={place.radiusMiles}>
+                        radius={place.radiusMiles * 1609.34}>
                     <Popup>{place.name}</Popup>
                 </Circle>,
                 <Marker position={[place.location.latitude, place.location.longitude]} icon={fireIcon}>
@@ -52,20 +62,54 @@ export default function MapView({location, placeList, setMap}: MapInputs) {
                     </Popup>
                 </Marker>
             )
+        if (Object.keys(place).includes("hospitals")) {
+            for (const hospital of (place as Fire).hospitals ?? []) {
+                markers.push(
+                    <Marker position={[hospital.location.latitude, hospital.location.longitude]}
+                            icon={healthIcon}>
+                        <Popup>
+                            {hospital.name}
+                        </Popup>
+                    </Marker>
+                )
+            }
+            for (const communityCenter of (place as Fire).communityCenters ?? []) {
+                markers.push(
+                    <Marker position={[communityCenter.location.latitude, communityCenter.location.longitude]}
+                            icon={communityIcon}>
+                        <Popup>
+                            {communityCenter.name}
+                        </Popup>
+                    </Marker>
+                )
+            }
+        }
     }
 
 
     return <MapContainer
-        center={[location.latitude, location.longitude]}
+        center={[
+            location?.latitude ?? defaultLocation.latitude,
+            location?.longitude ?? defaultLocation.longitude,
+        ]}
         zoom={13}
         scrollWheelZoom={true}
         ref={setMap}
-        style={{borderBottomLeftRadius: 12, borderBottomRightRadius: 12}}
+        style={{borderRadius: 12}}
     >
         <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        {(location !== undefined) &&
+            <Marker position={[
+                location.latitude,
+                location.longitude,
+            ]} icon={selfIcon}>
+                <Popup>
+                    This is you.
+                </Popup>
+            </Marker>}
         {...markers}
     </MapContainer>
 }
