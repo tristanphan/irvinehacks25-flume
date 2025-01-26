@@ -27,7 +27,6 @@ def get_nearest_10_h(lat, lon, danger_rad, listy, lat_field, lon_field):
             if not hospital['Safe']: num_unsafe += 1
     return near_10
 
-
 def get_nearest_10_cc(lat,lon, danger):
     near_10_cc = []
     num_unsafe = 0
@@ -100,5 +99,81 @@ def get_fires_dict():
         processed_fires[i]['CommunityCenter'] = get_nearest_10_cc(processed_fires[i]['Latitude'],
                                                             processed_fires[i]['Longitude'],
                                                             processed_fires[i]['DangerRadius'])
+
+    return processed_fires
+
+def get_nearest_10_person_h(fires, lat, lon, listy, lat_field, lon_field):
+    near_10 = []
+    num_unsafe = 0
+    max_unsafe = 5
+    for hospital in listy:
+        dist = geodesic((lat, lon), (hospital[lat_field], hospital[lon_field])).miles
+        hospital['Distance'] = dist
+        
+        for i in range(len(fires)):
+            if dist > fires[i]["DangerRadius"]: 
+                hospital['Safe'] = True
+            else: 
+                hospital['Safe'] = False
+                break
+        
+        if num_unsafe == max_unsafe and not hospital['Safe']: continue
+        
+        if len(near_10) < 10: 
+            insort(near_10, hospital, key=lambda x: x['Distance'])
+            if not hospital['Safe']: num_unsafe += 1
+        elif dist < near_10[9]['Distance']: 
+            near_10.pop()
+            insort(near_10, hospital, key=lambda x: x['Distance'])
+            if not hospital['Safe']: num_unsafe += 1
+    return near_10
+
+def get_nearest_10_person_cc(fires, lat, lon):
+    near_10_cc = []
+    num_unsafe = 0
+    max_unsafe = 5
+    with open('static/community_center_data.json', 'r') as file:
+        data = json.load(file)
+
+    for element in data:
+        name = element["Name"]
+        cc_lat = element["Latitude"]
+        cc_lon = element["Longitude"]
+        dist = geodesic((lat, lon), (cc_lat, cc_lon)).miles
+
+
+        for i in range(len(fires)):
+            if dist > fires[i]["DangerRadius"]: 
+                safe = True
+            else: 
+                safe = False
+                break
+            
+        if num_unsafe == max_unsafe and not safe: continue
+
+        if (name != "Unknown"):
+            cc_data = {"Name": name, "Distance": dist, "Longitude": lon, "Latitude": lat, "Safe": safe}
+
+        if len(near_10_cc) < 10: 
+            insort(near_10_cc, cc_data, key=lambda x: x['Distance'])
+            if not safe: num_unsafe += 1
+        elif dist < near_10_cc[9]['Distance']: 
+            near_10_cc.pop()
+            insort(near_10_cc, cc_data, key=lambda x: x['Distance'])
+            if not safe: num_unsafe += 1
+    return near_10_cc
+
+def get_person_location_dict(lat, lon):
+    processed_fires = cal_fires_api()
+    hospital_list = ca_hospitals_info()
+    
+    processed_fires[0]['Hospitals'] = copy.deepcopy(
+                                            get_nearest_10_person_h(processed_fires,
+                                            lat, lon, hospital_list, 'Latitude', 'Longitude'))
+
+    
+        # processed_fires[i]['CommunityCenter'] = get_nearest_10_cc(processed_fires, processed_fires[i]['Latitude'],
+        #                                                     processed_fires[i]['Longitude'],
+        #                                                     processed_fires[i]['DangerRadius'])
 
     return processed_fires
