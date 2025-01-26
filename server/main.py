@@ -19,9 +19,7 @@ def index():
         data = json.loads(request.data)
         lat = data.get('latitude')
         lon = data.get('longitude')
-        near_fires = get_nearest_fires(lat, lon)
-        near_hospitals = get_nearest_10_h(lat, lon, )
-        return get_fires_dict()
+        return get_person_location_dict(lat, lon)
 
 
 @app.route("/OpenStreetView", methods=['GET', 'POST'])
