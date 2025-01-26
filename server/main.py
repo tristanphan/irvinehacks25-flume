@@ -3,7 +3,7 @@ import urllib.parse
 import urllib.request
 import urllib.request
 from flask import Flask, session, redirect, url_for, request
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import urllib, json, csv
 from api import *
 
