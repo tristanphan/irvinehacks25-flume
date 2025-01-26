@@ -56,7 +56,7 @@ def get_nearest_10_cc(lat,lon, danger):
         if num_unsafe == max_unsafe and not safe: continue
 
         if (name != "Unknown"):
-            cc_data = {"Name": name, "Distance": dist, "Longitude": lon, "Latitude": lat, "Safe": safe}
+            cc_data = {"Name": name, "Distance": dist, "Longitude": cc_lon, "Latitude": cc_lat, "Safe": safe}
 
         if len(near_10_cc) < 10: 
             insort(near_10_cc, cc_data, key=lambda x: x['Distance'])
