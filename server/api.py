@@ -15,6 +15,42 @@ def is_safe(lat, lon, fires_list) -> bool:
             break
     return safe
 
+def calc_danger(lat, lon, fires_list) -> str:
+    danger_lvl = 'None'
+    distance = 0
+    name = ''
+    addon = ''
+    
+    for fire in fires_list:
+        if fire['Distance'] < 0.5 * fire['DangerRadius']:
+            danger_lvl = 'Very High'
+            distance = fire['Distance']
+            name = fire['Name']
+            addon = 'and are near the center of the danger zone'
+            break
+        elif fire['Distance'] < fire['DangerRadius']:
+            danger_lvl = 'High'
+            distance = fire['Distance']
+            name = fire['Name']
+            addon = 'and are within the danger zone'
+        elif fire['Distance'] < 2 * fire['DangerRadius'] and danger_lvl in ['None', 'Low']:
+            danger_lvl = 'Moderate'
+            distance = fire['Distance']
+            name = fire['Name']
+            addon = 'and it has a moderate chance of reaching you'
+        elif fire['Distance'] < 3 * fire['DangerRadius'] and danger_lvl == 'None':
+            danger_lvl = 'Low'
+            distance = fire['Distance']
+            name = fire['Name']
+            addon = 'but it has a low chance of reaching you'
+    
+    if danger_lvl == 'None': message = 'You are far from all fires'
+    else: message = f'You are {round(distance)} miles from {name}, the closest fire, {addon}.'
+    
+    danger_info = {'DangerLevel':danger_lvl, 'Message':message}
+    
+    return danger_info
+
 def get_nearest_10_h(lat, lon, danger_rad, listy, lat_field, lon_field):
     near_10 = []
     num_unsafe = 0
@@ -35,7 +71,7 @@ def get_nearest_10_h(lat, lon, danger_rad, listy, lat_field, lon_field):
             if not hospital['Safe']: num_unsafe += 1
     return near_10
 
-def get_nearest_10_cc(lat,lon, danger):
+def get_nearest_10_cc(lat, lon, danger):
     near_10_cc = []
     num_unsafe = 0
     max_unsafe = 5
@@ -169,6 +205,8 @@ def get_person_location_dict(lat, lon):
 
     
     community_center = get_nearest_10_person_cc(processed_fires, lat, lon)
+    
+    danger_info = calc_danger(lat, lon, processed_fires)
 
-    info_dict = {"Fires": processed_fires, "Hospitals": hospital, "CommunityCenter": community_center}
+    info_dict = {"Fires": processed_fires, "Hospitals": hospital, "CommunityCenter": community_center, 'Danger': danger_info}
     return info_dict
