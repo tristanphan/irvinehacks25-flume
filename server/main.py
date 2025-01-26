@@ -19,6 +19,7 @@ def index():
         lat = request.form.get('latitude')
         lon = request.form.get('longitude')
         print(lat, lon)
+        return get_fires_dict()
 
 
 @app.route("/OpenStreetView", methods=['GET', 'POST'])
