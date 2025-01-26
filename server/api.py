@@ -169,5 +169,5 @@ def get_person_location_dict(lat, lon):
     
     community_center = get_nearest_10_person_cc(processed_fires, lat, lon)
 
-    info_dict = {"Fires": processed_fires, "Hospitals": hospital, "CommuityCenter": community_center}
+    info_dict = {"Fires": processed_fires, "Hospitals": hospital, "CommunityCenter": community_center}
     return info_dict
