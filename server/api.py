@@ -6,6 +6,14 @@ import copy
 
 ACRES_TO_SQMILES = 0.0015625
 
+def is_safe(lat, lon, fires_list) -> bool:
+    safe = True
+    
+    for fire in fires_list:
+        if geodesic((lat, lon), (fire['Latitude'], fire['Longitude'])).miles < fire['DangerRadius']:
+            safe = False
+    return safe
+
 def get_nearest_10_h(lat, lon, danger_rad, listy, lat_field, lon_field):
     near_10 = []
     num_unsafe = 0
@@ -14,8 +22,7 @@ def get_nearest_10_h(lat, lon, danger_rad, listy, lat_field, lon_field):
         dist = geodesic((lat, lon), (hospital[lat_field], hospital[lon_field])).miles
         hospital['Distance'] = dist
         if dist > danger_rad: hospital['Safe'] = True
-        else: hospital['Safe'] = False
-        
+        else: hospital['Safe'] = False        
         if num_unsafe == max_unsafe and not hospital['Safe']: continue
         
         if len(near_10) < 10: 
@@ -45,8 +52,7 @@ def get_nearest_10_cc(lat,lon, danger):
         if dist > danger: 
             safe = True
         else: 
-            safe = False
-            
+            safe = False            
         if num_unsafe == max_unsafe and not safe: continue
 
         if (name != "Unknown"):
