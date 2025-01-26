@@ -96,6 +96,5 @@ def get_fires_dict():
         # processed_fires[i]['CommunityCenter'] = get_nearest_10_cc(processed_fires[i]['Latitude'],
         #                                                     processed_fires[i]['Longitude'],
         #                                                     processed_fires[i]['DangerRadius'])
-    get_all_communities_cali()  
 
     return processed_fires
