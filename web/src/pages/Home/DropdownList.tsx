@@ -7,6 +7,14 @@ import {Diversity3Rounded, LocalFireDepartment, LocalHospital} from "@mui/icons-
 import Hospital from "../../types/Hospital.tsx";
 import CommunityCenter from "../../types/CommunityCenter.tsx";
 import IconType from "../../types/IconType.tsx";
+import IconButton, { IconButtonProps } from '@mui/material/IconButton';
+import { styled } from '@mui/material/styles';
+import Card from '@mui/material/Card';
+import Collapse from '@mui/material/Collapse';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+
 
 interface PlaceListInput {
     placeList: Place[],
@@ -20,6 +28,74 @@ interface ListCardInput<T extends Place> {
 }
 
 function ListCard<T extends Place>({place, map, generateCardContents}: ListCardInput<T>) {
+    interface ExpandMoreProps extends IconButtonProps {
+        expand: boolean;
+    }
+
+const ExpandMore = styled((props: ExpandMoreProps) => {
+    const { expand, ...other } = props;
+    return <IconButton {...other} />;
+})(({ theme }) => ({
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+    }),
+    variants: [
+        {
+            props: ({ expand }) => !expand,
+            style: {
+                transform: 'rotate(0deg)',
+            },
+        },
+        {
+            props: ({ expand }) => !!expand,
+            style: {
+                transform: 'rotate(180deg)',
+            },
+        },
+    ],
+}));
+
+export default function DropdownCard() {
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+
+    return (
+        <Card sx={{ maxWidth: 500 }}>
+
+            <CardContent>
+                <Typography variant="h5" sx={{ color: '' }}>
+                    Irvine Fire
+                </Typography>
+            </CardContent>
+            <CardActions disableSpacing>
+
+                <ExpandMore
+                    expand={expanded}
+                    onClick={handleExpandClick}
+                    aria-expanded={expanded}
+                    aria-label="show more"
+                >
+                    <ExpandMoreIcon />
+                </ExpandMore>
+            </CardActions>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                    <Typography sx={{ marginBottom: 2 }}>
+                        UCI Hospital
+                    </Typography>
+                    <Typography sx={{ marginBottom: 2 }}>
+                        Tustin community center
+                    </Typography>
+                </CardContent>
+            </Collapse>
+        </Card>
+    );
+}
+
     return <Box p={1}>
         <ButtonBase
             onClick={() => map?.flyTo([place.location.latitude, place.location.longitude], undefined, {duration: 1})}
@@ -34,7 +110,7 @@ function ListCard<T extends Place>({place, map, generateCardContents}: ListCardI
     </Box>
 }
 
-export default function PlaceList({placeList, map}: PlaceListInput) {
+function PlaceList({placeList, map}: PlaceListInput) {
     const cards: ReactNode[] = placeList.map(place => {
         let generateFunction: (place: Place) => ReactNode;
         switch (place.iconType) {

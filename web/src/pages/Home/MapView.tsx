@@ -31,7 +31,7 @@ export default function MapView({location, placeList, setMap}: MapInputs) {
 
     const markers: ReactNode[] = []
     for (const place of placeList) {
-        if (place.radius === undefined)
+        if (place.radiusMiles === undefined)
             markers.push(
                 <Marker position={[place.location.latitude, place.location.longitude]}
                         icon={place.iconType == 1 ? healthIcon : communityIcon}>
@@ -43,7 +43,7 @@ export default function MapView({location, placeList, setMap}: MapInputs) {
         else
             markers.push(
                 <Circle center={[place.location.latitude, place.location.longitude]} pathOptions={{color: 'red'}}
-                        radius={place.radius}>
+                        radius={place.radiusMiles}>
                     <Popup>{place.name}</Popup>
                 </Circle>,
                 <Marker position={[place.location.latitude, place.location.longitude]} icon={fireIcon}>
@@ -58,7 +58,7 @@ export default function MapView({location, placeList, setMap}: MapInputs) {
     return <MapContainer
         center={[location.latitude, location.longitude]}
         zoom={13}
-        scrollWheelZoom={false}
+        scrollWheelZoom={true}
         ref={setMap}
         style={{borderBottomLeftRadius: 12, borderBottomRightRadius: 12}}
     >

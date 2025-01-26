@@ -131,3 +131,5 @@ dmypy.json
 # Specialized
 .idea/
 .vscode/
+
+.DS_Store
